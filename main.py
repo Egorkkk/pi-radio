@@ -5,6 +5,7 @@ import pygame
 import layout
 from app import (
     create_initial_state,
+    initialize_scales,
     move_genre_left,
     move_genre_right,
     move_station_left,
@@ -12,15 +13,16 @@ from app import (
     toggle_debug,
     update_state,
 )
-from fake_backend import FakeBackend
+from config import load_config
+from mpv_backend import MpvBackend
 from radio_catalog import RadioCatalog
 from radio_controller import RadioController
 from renderer import UIRenderer
+from runtime_persistence import RuntimePersistence
 from station_selection_policy import StationSelectionPolicy
 
 
 WINDOW_TITLE = "Vintage Radio UI MVP"
-FPS = 60
 
 
 def handle_events(state) -> None:
@@ -46,18 +48,60 @@ def handle_events(state) -> None:
                 toggle_debug(state)
 
 
+def apply_persisted_selection(state, persisted_state) -> None:
+    if persisted_state.last_genre_id is None:
+        return
+
+    genre_ids = {genre.id for genre in state.genres}
+    if persisted_state.last_genre_id not in genre_ids:
+        return
+
+    state.selected_genre_id = persisted_state.last_genre_id
+    initialize_scales(state)
+
+    if persisted_state.last_station_id is None:
+        return
+
+    selected_genre = state.get_selected_genre()
+    if selected_genre is None:
+        return
+
+    station_ids = {station.id for station in selected_genre.stations}
+    if persisted_state.last_station_id not in station_ids:
+        return
+
+    state.selected_station_id = persisted_state.last_station_id
+    initialize_scales(state)
+
+
+def save_runtime_selection(persistence: RuntimePersistence, state, enabled: bool) -> None:
+    if not enabled:
+        return
+
+    persistence.save(
+        last_genre_id=state.selected_genre_id,
+        last_station_id=state.selected_station_id,
+    )
+
+
 def main() -> None:
+    config = load_config()
+    persistence = RuntimePersistence(config.persistence.state_file)
+    persisted_state = persistence.load()
+
     pygame.init()
 
-    screen = pygame.display.set_mode((layout.SCREEN_W, layout.SCREEN_H))
+    flags = pygame.FULLSCREEN if config.platform.fullscreen else 0
+    screen = pygame.display.set_mode((layout.SCREEN_W, layout.SCREEN_H), flags)
     pygame.display.set_caption(WINDOW_TITLE)
 
     clock = pygame.time.Clock()
     renderer = UIRenderer()
     state = create_initial_state()
+    apply_persisted_selection(state, persisted_state)
 
     catalog = RadioCatalog(state.genres)
-    backend = FakeBackend()
+    backend = MpvBackend(config=config.mpv)
     selection_policy = StationSelectionPolicy(
         settle_epsilon=1.0,
         settle_time=0.30,
@@ -68,17 +112,37 @@ def main() -> None:
         selection_policy=selection_policy,
     )
 
+    last_saved_genre_id = state.selected_genre_id
+    last_saved_station_id = state.selected_station_id
+
     try:
         while state.running:
-            dt = clock.tick(FPS) / 1000.0
+            dt = clock.tick(config.platform.fps) / 1000.0
 
             handle_events(state)
             update_state(state, dt)
             controller.update(state, dt)
             renderer.render(screen, state)
 
+            if (
+                state.selected_genre_id != last_saved_genre_id
+                or state.selected_station_id != last_saved_station_id
+            ):
+                save_runtime_selection(
+                    persistence=persistence,
+                    state=state,
+                    enabled=config.persistence.save_on_station_change,
+                )
+                last_saved_genre_id = state.selected_genre_id
+                last_saved_station_id = state.selected_station_id
+
             pygame.display.flip()
     finally:
+        save_runtime_selection(
+            persistence=persistence,
+            state=state,
+            enabled=config.persistence.save_on_station_change,
+        )
         controller.shutdown()
         pygame.quit()
 
