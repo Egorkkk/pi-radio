@@ -1,0 +1,37 @@
+[difm]
+username = "ad.rasao@gmail.com"
+password = "rjue12ws"
+network = "di"
+stream_quality = "premium"
+request_timeout_seconds = 15.0
+
+[mpv]
+executable = "mpv"
+audio_device = "auto"
+cache_seconds = 8.0
+reconnect_delay_seconds = 3.0
+idle_mode = true
+extra_args = [
+  "--no-video",
+  "--force-window=no",
+  "--volume=100"
+]
+
+[platform]
+mode = "pi"
+fullscreen = true
+framebuffer_device = "/dev/fb0"
+width = 480
+height = 320
+fps = 60
+
+[persistence]
+state_file = "runtime_state.json"
+save_on_station_change = true
+
+[input]
+keyboard_enabled = true
+encoder_support_enabled = false
+touch_support_enabled = false
+volume_adc_enabled = false
+power_switch_support_enabled = false
