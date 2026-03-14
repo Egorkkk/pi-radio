@@ -152,11 +152,21 @@ class DIFMClient:
         return self._append_listen_key(playlist_url)
 
     def _append_listen_key(self, url: str) -> str:
+        listen_key = self._config.listen_key.strip()
+        if not listen_key:
+            return url
+
         parsed = urllib.parse.urlparse(url)
-        query = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
-        query = [(k, v) for k, v in query if k != "listen_key"]
-        query.append(("listen_key", self._config.listen_key.strip()))
-        new_query = urllib.parse.urlencode(query)
+
+        existing_query = parsed.query.strip()
+        if not existing_query:
+            new_query = listen_key
+        else:
+            query_parts = [part for part in existing_query.split("&") if part]
+            query_parts = [part for part in query_parts if part != listen_key]
+            query_parts.append(listen_key)
+            new_query = "&".join(query_parts)
+
         return urllib.parse.urlunparse(parsed._replace(query=new_query))
 
     def _extract_all_filter_channels(self, filters: list[Any]) -> list[dict[str, Any]]:

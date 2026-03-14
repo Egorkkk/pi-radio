@@ -5,7 +5,7 @@
     "name": "00s Club Hits",
     "asset_url": "//cdn-images.audioaddict.com/e/a/4/7/e/5/ea47e595494534b43f1ca63f5dc25854.png",
     "description": "Your favorite dance tunes from the start of the decade. Familiar hits and overlooked classics in abundance.",
-    "stream_url": "http://prem1.di.fm:80/00sclubhits_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/00sclubhits_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 12,
@@ -13,7 +13,7 @@
     "name": "Ambient",
     "asset_url": "//cdn-images.audioaddict.com/5/e/5/3/4/b/5e534b6b7ecf7eca803fb9339a2c8f65.png",
     "description": "Electronic sounds and atmospheric textures create a genre to enhance your state of mind and take you deeper.",
-    "stream_url": "http://prem1.di.fm:80/ambient_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/ambient_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 403,
@@ -21,7 +21,7 @@
     "name": "Atmospheric Breaks",
     "asset_url": "//cdn-images.audioaddict.com/5/a/8/f/0/d/5a8f0d5191a7a137283f6887550cdbfd.png",
     "description": "Spaced out, melodic and full of warmth - these broken beat dance tunes will keep you dazed and amused.",
-    "stream_url": "http://prem1.di.fm:80/atmosphericbreaks_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/atmosphericbreaks_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 290,
@@ -29,7 +29,7 @@
     "name": "Bass & Jackin' House",
     "asset_url": "//cdn-images.audioaddict.com/b/b/7/7/5/e/bb775e9644bc2134d43e193760431b8d.png",
     "description": "From the funkiest grooves to the dirtiest beats. Hard-hitting, high energy 4/4 club cuts to move the masses.",
-    "stream_url": "http://prem4.di.fm:80/bassnjackinhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/bassnjackinhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 289,
@@ -37,7 +37,7 @@
     "name": "Bassline",
     "asset_url": "//cdn-images.audioaddict.com/e/7/5/d/3/9/e75d39f863948e6df2f7ffaa89d1552f.png",
     "description": "Blending together elements of house music, speed garage, and techno – it’s all about the low end frequencies.",
-    "stream_url": "http://prem1.di.fm:80/bassline_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/bassline_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 325,
@@ -45,7 +45,7 @@
     "name": "Big Beat",
     "asset_url": "//cdn-images.audioaddict.com/4/8/3/9/d/e/4839de98a1aff82b0bb376d2fdacfde7.png",
     "description": "Heavily focused on breakbeats and dusty samples. A defining 90s musical movement still going strong today.",
-    "stream_url": "http://prem1.di.fm:80/bigbeat_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/bigbeat_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 209,
@@ -53,7 +53,7 @@
     "name": "Big Room House",
     "asset_url": "//cdn-images.audioaddict.com/d/7/0/9/d/6/d709d66b589a95d31a8ca6eb422309db.png",
     "description": "Fusing together house elements from the past and the present - prime time music full of uplifting high energy.",
-    "stream_url": "http://prem4.di.fm:80/bigroomhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/bigroomhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 15,
@@ -61,7 +61,7 @@
     "name": "Breaks",
     "asset_url": "//cdn-images.audioaddict.com/9/7/6/4/6/e/97646efe8d1c10aa12bb9a6470608af2.png",
     "description": "Inspired by hip hop and UK rave music, breaks features broken up drum loops and creative samples, synths and fx.",
-    "stream_url": "http://prem1.di.fm:80/breaks_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/breaks_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 400,
@@ -69,7 +69,7 @@
     "name": "Chill & Tropical House",
     "asset_url": "//cdn-images.audioaddict.com/1/a/9/d/9/8/1a9d987f6ba78247848df7a09026288d.png",
     "description": "The sounds of Chill & Tropical House are expertly made for lounging and dancing alike with its deeper house vibes.",
-    "stream_url": "http://prem1.di.fm:80/chillntropicalhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/chillntropicalhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 504,
@@ -77,7 +77,7 @@
     "name": "Chill EDM",
     "asset_url": "//cdn-images.audioaddict.com/a/4/5/5/a/2/a455a20c126294cf743421ee34473b1a.png",
     "description": "Good EDM doesn’t have to blow out your speakers and our curated selection of Chill EDM is a testament to the strength of mellow, chilled out electronic music.",
-    "stream_url": "http://prem4.di.fm:80/chilledm_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/chilledm_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 224,
@@ -85,7 +85,7 @@
     "name": "ChillHop",
     "asset_url": "//cdn-images.audioaddict.com/9/e/2/3/5/1/9e23510d8ca82e1785a329e410343423.png",
     "description": "Mellow chill beats, lofi hip-hop, trip hop, downtempo beats and jazz, blended together in a laid back style for perfect listening.",
-    "stream_url": "http://prem1.di.fm:80/chillhop_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/chillhop_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 3,
@@ -93,7 +93,7 @@
     "name": "Chillout",
     "asset_url": "//cdn-images.audioaddict.com/0/3/3/3/b/6/0333b632ca8a69d31ca99ceea595384d.png",
     "description": "Electronic sounds, mellow mid-tempo rhythms, and a groove meant to calm the senses and ease the mind.",
-    "stream_url": "http://prem1.di.fm:80/chillout_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/chillout_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 68,
@@ -101,7 +101,7 @@
     "name": "Chillout Dreams",
     "asset_url": "//cdn-images.audioaddict.com/6/d/8/7/7/8/6d8778faec3669ec64ef6f33a447b221.png",
     "description": "The perfect musical soundtrack for when you want to close your eyes, get truly comfortable, and drift away.",
-    "stream_url": "http://prem1.di.fm:80/chilloutdreams_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/chilloutdreams_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 275,
@@ -109,7 +109,7 @@
     "name": "Chillstep",
     "asset_url": "//cdn-images.audioaddict.com/4/1/5/e/3/a/415e3a1009b38ecbbbc509056143a606.png",
     "description": "The brilliant combination of dubstep rhythms with the mellow grooves of chillout. A unique sound all its own.",
-    "stream_url": "http://prem1.di.fm:80/chillstep_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/chillstep_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 69,
@@ -117,7 +117,7 @@
     "name": "Classic EuroDance",
     "asset_url": "//cdn-images.audioaddict.com/e/9/2/5/0/a/e9250a0ba236b9eb093cb7e5bc897701.png",
     "description": "European pop music born in the 90s full of high energy sounds and big hooks – now heard in gyms and malls worldwide.",
-    "stream_url": "http://prem1.di.fm:80/classiceurodance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/classiceurodance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 183,
@@ -125,7 +125,7 @@
     "name": "Classic EuroDisco",
     "asset_url": "//cdn-images.audioaddict.com/7/2/0/9/b/6/7209b62a45f7b22d50d80841c7373436.png",
     "description": "Conceived in the European discos  in the 70s, evolving through the decades into modern electronic masterpieces.",
-    "stream_url": "http://prem1.di.fm:80/classiceurodisco_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/classiceurodisco_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 90,
@@ -133,7 +133,7 @@
     "name": "Classic Trance",
     "asset_url": "//cdn-images.audioaddict.com/d/a/0/a/a/a/da0aaae154eefa1e430ef5dc2bce8de9.png",
     "description": "The classic melodies, the epic breakdowns and gigantic builds. Re-experience Trance music in her prime.",
-    "stream_url": "http://prem1.di.fm:80/classictrance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/classictrance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 125,
@@ -141,7 +141,7 @@
     "name": "Classic Vocal Trance",
     "asset_url": "//cdn-images.audioaddict.com/0/4/9/d/4/4/049d442a09d460e9c0e68fc2cd14b0d5.png",
     "description": "Classic sounds of Vocal Trance, lush vocals paired together with emotive dance music",
-    "stream_url": "http://prem1.di.fm:80/classicvocaltrance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/classicvocaltrance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 177,
@@ -149,7 +149,7 @@
     "name": "Club Dubstep",
     "asset_url": "//cdn-images.audioaddict.com/e/4/4/5/9/a/e4459a0fc000a5bc21c31e9e693741b4.png",
     "description": "The bassbin rattling, speaker-freaking hits of Dubstep – all tried, tested and approved to work in the clubs.",
-    "stream_url": "http://prem1.di.fm:80/clubdubstep_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/clubdubstep_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 213,
@@ -157,7 +157,7 @@
     "name": "Club Hits (Slavic)",
     "asset_url": "//cdn-images.audioaddict.com/5/2/d/8/f/1/52d8f1216ae94a13dfb6f0065c444c98.png",
     "description": "The hottest club hits.",
-    "stream_url": "http://prem4.di.fm:80/russianclubhits_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/russianclubhits_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 70,
@@ -165,7 +165,7 @@
     "name": "Club Sounds",
     "asset_url": "//cdn-images.audioaddict.com/4/3/8/f/9/2/438f92f2163aeeb307a8a7a4a9dc2b5e.png",
     "description": "The music heard in the biggest venues worldwide. From prime time pushers to deeper house shakers - the sounds of now.",
-    "stream_url": "http://prem1.di.fm:80/club_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/club_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 181,
@@ -173,7 +173,7 @@
     "name": "Dark DnB",
     "asset_url": "//cdn-images.audioaddict.com/1/1/d/c/1/7/11dc17acc6ae36eac9adc0b6d4715b91.png",
     "description": "Evil, gritty and twisted DnB / Drum & Bass. at 160+ BPM, hear the darkest basslines and the hardest hitting percussion.",
-    "stream_url": "http://prem1.di.fm:80/darkdnb_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/darkdnb_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 346,
@@ -181,7 +181,7 @@
     "name": "Dark PsyTrance",
     "asset_url": "//cdn-images.audioaddict.com/1/0/8/a/4/4/108a44f8092946fa72d1c940d24f5ba5.png",
     "description": "The darker form of PsyTrance, which is a sound all its own – direct from Goa to your headphones.",
-    "stream_url": "http://prem4.di.fm:80/darkpsytrance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/darkpsytrance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 174,
@@ -189,7 +189,7 @@
     "name": "Deep House",
     "asset_url": "//cdn-images.audioaddict.com/3/d/e/6/0/3/3de6033ff6106cc706d3bd420f348081.png",
     "description": "House music crafted for the smaller and mid-sized rooms - deeper tracks full of silky, smooth grooves.",
-    "stream_url": "http://prem1.di.fm:80/deephouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/deephouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 137,
@@ -197,7 +197,7 @@
     "name": "Deep Nu-Disco",
     "asset_url": "//cdn-images.audioaddict.com/a/1/3/1/1/8/a13118a023ac1961952111ae961d67ec.png",
     "description": "Elements of house, funk, and disco. Mid-tempo beats, soulful grooves and head nodding selections.",
-    "stream_url": "http://prem1.di.fm:80/deepnudisco_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/deepnudisco_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 517,
@@ -205,7 +205,7 @@
     "name": "Deep Organic House",
     "asset_url": "//cdn-images.audioaddict.com/7/4/0/c/a/9/740ca9fdd39ca56606fe900ae4a955fb.png",
     "description": "A deeper, more meditative, and slower pace of House music often featuring acoustic and ethnic instrumental samples.",
-    "stream_url": "http://prem4.di.fm:80/deeporganichouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/deeporganichouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 505,
@@ -213,7 +213,7 @@
     "name": "Deep Progressive House",
     "asset_url": "//cdn-images.audioaddict.com/b/0/e/1/9/0/b0e19018c34150a07d76224e5fcdbeda.png",
     "description": "This smooth, groove-heavy selection of deep progressive house tracks is the perfect soundtrack for smaller and mid-sized rooms.",
-    "stream_url": "http://prem4.di.fm:80/deepprogressivehouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/deepprogressivehouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 520,
@@ -221,7 +221,7 @@
     "name": "Deep Progressive Trance",
     "asset_url": "//cdn-images.audioaddict.com/3/a/c/7/6/c/3ac76c2de281925790c9acb99491bcbf.png",
     "description": "A subgenre of Progressive Trance that features a deeper, more emotional and melodic sound.",
-    "stream_url": "http://prem4.di.fm:80/deepprogressivetrance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/deepprogressivetrance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 182,
@@ -229,7 +229,7 @@
     "name": "Deep Tech",
     "asset_url": "//cdn-images.audioaddict.com/2/d/2/0/b/3/2d20b381507900c6997e7feafc8ef4ad.png",
     "description": "A fusion of deep house & techno. Punchy grooves, spaced out sounds and forward thinking productions.",
-    "stream_url": "http://prem1.di.fm:80/deeptech_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/deeptech_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 353,
@@ -237,7 +237,7 @@
     "name": "Detroit House & Techno",
     "asset_url": "//cdn-images.audioaddict.com/3/7/8/c/0/5/378c0557d491b7de0b0e58156034fc68.png",
     "description": "Where would dance music be without Detroit? The city that started it all continues to inspire and educate.",
-    "stream_url": "http://prem4.di.fm:80/detroithousentechno_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/detroithousentechno_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 92,
@@ -245,7 +245,7 @@
     "name": "Disco House",
     "asset_url": "//cdn-images.audioaddict.com/1/6/4/b/a/1/164ba1d2220eb9d795f3ea20284bc5e0.png",
     "description": "The feel good sound inspired from 70s disco combined with the warm kick drum of modern house music.",
-    "stream_url": "http://prem1.di.fm:80/discohouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/discohouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 10,
@@ -253,7 +253,7 @@
     "name": "DJ Mixes",
     "asset_url": "//cdn-images.audioaddict.com/d/0/1/4/1/d/d0141d78a49cb55e2dccba46b812c3b2.png",
     "description": "From techno, deep house, progressive and trance – check out the sounds of the DJ deep in the mix.",
-    "stream_url": "http://prem1.di.fm:80/djmixes_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/djmixes_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 180,
@@ -261,7 +261,7 @@
     "name": "Downtempo Lounge",
     "asset_url": "//cdn-images.audioaddict.com/3/2/b/0/c/7/32b0c7fb7b9ecc4f920fedacbe83b76f.png",
     "description": "Head nodding beats, chilled vocals, and lush soundscapes to bring down the sun and start the night.",
-    "stream_url": "http://prem1.di.fm:80/downtempolounge_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/downtempolounge_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 13,
@@ -269,7 +269,7 @@
     "name": "Drum and Bass",
     "asset_url": "//cdn-images.audioaddict.com/3/1/b/a/c/1/31bac1b29a724275385d23ffef6846db.png",
     "description": "Born in the mid 90s, Drum and Bass / DnB is all about fast breakbeats, urban vibes, and rib rattling basslines.",
-    "stream_url": "http://prem1.di.fm:80/drumandbass_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/drumandbass_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 291,
@@ -277,7 +277,7 @@
     "name": "Drumstep",
     "asset_url": "//cdn-images.audioaddict.com/d/0/5/5/7/a/d0557a7a89b4cb899424201c0739c38a.png",
     "description": "A hybrid of half-time Dubstep and intense Drum and Bass / DnB.",
-    "stream_url": "http://prem4.di.fm:80/drumstep_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/drumstep_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 348,
@@ -285,7 +285,7 @@
     "name": "Dub",
     "asset_url": "//cdn-images.audioaddict.com/2/9/5/7/2/4/2957240facae9dc05e504250727fc797.png",
     "description": "An emphasis on the bass and drums / DnB, delayed effects, sampled vocals and smokey Reggae inspired vibes.",
-    "stream_url": "http://prem1.di.fm:80/dub_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/dub_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 355,
@@ -293,7 +293,7 @@
     "name": "Dub Techno",
     "asset_url": "//cdn-images.audioaddict.com/2/1/a/e/8/6/21ae86fe235207b6c98aa9099a464111.png",
     "description": "The beloved sounds of deep techno saturated with tape delays, heavy reverb and ice cold atmospherics.",
-    "stream_url": "http://prem1.di.fm:80/dubtechno_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/dubtechno_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 91,
@@ -301,7 +301,7 @@
     "name": "Dubstep",
     "asset_url": "//cdn-images.audioaddict.com/4/7/a/b/0/0/47ab0060415a82ae14277dad08c7d2e7.png",
     "description": "The wobbles of the bass, the party rocking beats, and the biggest crowd destroying drops.",
-    "stream_url": "http://prem1.di.fm:80/dubstep_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/dubstep_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 210,
@@ -309,7 +309,7 @@
     "name": "EDM Festival",
     "asset_url": "//cdn-images.audioaddict.com/7/8/6/a/f/f/786aff8f6e1f4de5062c5722d890f491.png",
     "description": "The sound of the largest events. From the gargantuan festivals, the huge main rooms and the biggest DJs.",
-    "stream_url": "http://prem4.di.fm:80/mainstage_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/mainstage_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 474,
@@ -317,7 +317,7 @@
     "name": "EDM Hits",
     "asset_url": "//cdn-images.audioaddict.com/e/b/9/e/3/8/eb9e3899d1c8db4d9b87a3e4276f8b4e.png",
     "description": "Where dance meets pop. Crossover favorites, stadium-sized anthems and the biggest electronic tunes in existence.",
-    "stream_url": "http://prem4.di.fm:80/edm_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/edm_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 56,
@@ -325,7 +325,7 @@
     "name": "Electro House",
     "asset_url": "//cdn-images.audioaddict.com/4/4/d/6/0/e/44d60e06f5873a61baf591770ebb65c8.png",
     "description": "Buzzing basslines, huge kicks, party rocking drops. House music packed full of gigantic bass and massive synths.",
-    "stream_url": "http://prem1.di.fm:80/electrohouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/electrohouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 327,
@@ -333,7 +333,7 @@
     "name": "Electro Swing",
     "asset_url": "//cdn-images.audioaddict.com/4/f/6/f/6/9/4f6f6973da61cf42a029f7cf953e9a56.png",
     "description": "The combination of 1920s-1940s jazz and swing music, big band horns and modern day electro house.",
-    "stream_url": "http://prem1.di.fm:80/electroswing_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/electroswing_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 280,
@@ -341,7 +341,7 @@
     "name": "Electronic Pioneers",
     "asset_url": "//cdn-images.audioaddict.com/a/3/d/a/4/f/a3da4f698b24e6816cf0eb77a8e4616b.png",
     "description": "The trailblazers, the renegades and the experimental musicians who gave early inspiration with electronic instruments.",
-    "stream_url": "http://prem1.di.fm:80/electronicpioneers_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/electronicpioneers_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 286,
@@ -349,7 +349,7 @@
     "name": "Electropop",
     "asset_url": "//cdn-images.audioaddict.com/9/3/1/e/0/d/931e0de12186cb08ed15512f1205f3d4.png",
     "description": "Catchy pop music blended together with vintage synthesizers and electronic instrumentation.",
-    "stream_url": "http://prem4.di.fm:80/electropop_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/electropop_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 175,
@@ -357,7 +357,7 @@
     "name": "Epic Trance",
     "asset_url": "//cdn-images.audioaddict.com/d/4/3/f/0/6/d43f065715c1bcc6d5649694caa50464.png",
     "description": "Trance in its most boisterous form. Uplifting melodies on top of high energy beats create these euphoric anthems.",
-    "stream_url": "http://prem4.di.fm:80/epictrance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/epictrance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 6,
@@ -365,7 +365,7 @@
     "name": "EuroDance",
     "asset_url": "//cdn-images.audioaddict.com/e/c/1/b/c/5/ec1bc53d93331d474f88134ab7263018.png",
     "description": "Pop music infused with a high energy 4/4 pulse. Heavy on the synthesizers, the melodies and the vocals.",
-    "stream_url": "http://prem1.di.fm:80/eurodance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/eurodance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 58,
@@ -373,7 +373,7 @@
     "name": "Funky House",
     "asset_url": "//cdn-images.audioaddict.com/2/a/f/3/3/b/2af33b9445799be8d8daae77ef003f7f.png",
     "description": "Focused on the funkiest grooves, with plenty of the guitar licks and clever samples placed around a 4/4 swing.",
-    "stream_url": "http://prem1.di.fm:80/funkyhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/funkyhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 424,
@@ -381,7 +381,7 @@
     "name": "Future Bass",
     "asset_url": "//cdn-images.audioaddict.com/3/9/e/5/8/b/39e58b7b675d6ec353582cd5e9f38dbe.png",
     "description": "Hard basslines, booming beats and insatiable grooves. Inspired by Trap, Juke and Garage - molded together into a unique booming style.",
-    "stream_url": "http://prem4.di.fm:80/futurebass_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/futurebass_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 292,
@@ -389,7 +389,7 @@
     "name": "Future Garage",
     "asset_url": "//cdn-images.audioaddict.com/8/f/3/0/e/7/8f30e734caddb1abffc2cd88618a46a1.png",
     "description": "2step Garage rhythms, chunky bass line driven grooves and plenty of forward thinking innovation.",
-    "stream_url": "http://prem4.di.fm:80/futuregarage_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/futuregarage_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 53,
@@ -397,7 +397,7 @@
     "name": "Future Synthpop",
     "asset_url": "//cdn-images.audioaddict.com/e/e/8/5/2/3/ee8523a0d6165465961cb2d0445c4f27.png",
     "description": "Finest selection of futurepop and synthpop.",
-    "stream_url": "http://prem1.di.fm:80/futuresynthpop_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/futuresynthpop_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 16,
@@ -405,7 +405,7 @@
     "name": "Gabber",
     "asset_url": "//cdn-images.audioaddict.com/c/d/6/c/1/d/cd6c1d8f636fdfec9f541b6887eb0a3c.png",
     "description": "The hardest form of techno with punishing tracks designed to drive the crowds into a sweaty frenzy.",
-    "stream_url": "http://prem1.di.fm:80/gabber_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/gabber_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 198,
@@ -413,7 +413,7 @@
     "name": "Glitch Hop",
     "asset_url": "//cdn-images.audioaddict.com/7/e/f/f/1/2/7eff1206604b6476a394157a307176c1.png",
     "description": "The sound of digital malfunctions, electric hum and bit rate distortions perfectly placed alongside laid-back hip hop beats.",
-    "stream_url": "http://prem1.di.fm:80/glitchhop_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/glitchhop_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 8,
@@ -421,7 +421,7 @@
     "name": "Goa-Psy Trance",
     "asset_url": "//cdn-images.audioaddict.com/f/9/c/1/7/1/f9c1719497712cbab54c76e623e5c0de.png",
     "description": "A very psychedelic form of trance, Goa-Psy Trance is a sound full of arpeggiated synths and trippy effects.",
-    "stream_url": "http://prem1.di.fm:80/goapsy_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/goapsy_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 176,
@@ -429,7 +429,7 @@
     "name": "Hands Up",
     "asset_url": "//cdn-images.audioaddict.com/7/7/e/8/4/0/77e840d3d3d0e3a03ab43256076d626f.png",
     "description": "A channel showcasing everything from hard dance, trance and happy hardcore to lift the spirits (and the arms).",
-    "stream_url": "http://prem1.di.fm:80/handsup_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/handsup_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 5,
@@ -437,7 +437,7 @@
     "name": "Hard Dance",
     "asset_url": "//cdn-images.audioaddict.com/f/2/f/6/f/0/f2f6f0e8f58955ed63b7410a5e87eda8.png",
     "description": "Concrete kicks and punching rhythms, hard dance is a tougher side of music with sharp edges and aggressive power.",
-    "stream_url": "http://prem1.di.fm:80/harddance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/harddance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 276,
@@ -445,7 +445,7 @@
     "name": "Hard Techno",
     "asset_url": "//cdn-images.audioaddict.com/1/6/a/e/7/4/16ae74fb817e139484f5f30582eeb988.png",
     "description": "Tough as nails warehouse jams full of cold aggression, sinister structures and pounding rhythms that hit hard.",
-    "stream_url": "http://prem1.di.fm:80/hardtechno_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/hardtechno_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 9,
@@ -453,7 +453,7 @@
     "name": "Hardcore",
     "asset_url": "//cdn-images.audioaddict.com/a/7/a/6/1/f/a7a61f83647ff09a8751cf4e208ad8b5.png",
     "description": "Strictly for the hardcore. These are the biggest and boldest bangers, and the hardest hitting tracks.",
-    "stream_url": "http://prem1.di.fm:80/hardcore_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/hardcore_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 60,
@@ -461,7 +461,7 @@
     "name": "Hardstyle",
     "asset_url": "//cdn-images.audioaddict.com/1/0/f/b/9/b/10fb9bf4889236d6ba3200234573838b.png",
     "description": "Hard techno & hardcore. A global phenomenon with powerful kicks, distorted effects and infectious melodies.",
-    "stream_url": "http://prem1.di.fm:80/hardstyle_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/hardstyle_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 4,
@@ -469,7 +469,7 @@
     "name": "House",
     "asset_url": "//cdn-images.audioaddict.com/0/f/9/7/c/f/0f97cf74e646af53a7a9ce15dce67eb8.png",
     "description": "Born in Chicago and now global, house music is always evolving but remains true to its pure 4/4 structure.",
-    "stream_url": "http://prem4.di.fm:80/house_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/house_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 522,
@@ -477,7 +477,7 @@
     "name": "ICONYC Radio",
     "asset_url": "//cdn-images.audioaddict.com/4/5/9/f/7/2/459f7276e3b86f01f6cb2b99e1abd088.png",
     "description": "ICONYC Radio, is the brand new channel exclusively on the global platform DI.FM. Showcasing forward-thinking Melodic House, Techno, Dark Disco, and Afro. Curated by the artistic team behind the renowned label, ICONYC Radio delivers a finely tuned selection of crafted music by leading innovators, musical tastemakers, and genre-defying artists.",
-    "stream_url": "http://prem4.di.fm:80/iconycradio_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/iconycradio_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 404,
@@ -485,7 +485,7 @@
     "name": "Indie Beats",
     "asset_url": "//cdn-images.audioaddict.com/3/d/c/c/5/b/3dcc5bc78a0a2f411c83c0a966adc1a0.png",
     "description": "Smooth, groovy and full of cutting-edge, fresh ideas - beats to kick back and enjoy far from the club setting.",
-    "stream_url": "http://prem4.di.fm:80/indiebeats_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/indiebeats_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 351,
@@ -493,7 +493,7 @@
     "name": "Indie Dance",
     "asset_url": "//cdn-images.audioaddict.com/a/9/f/f/b/d/a9ffbdf2631dfa86ef1943775f559be8.png",
     "description": "The spirit of Rock & Roll with an electronic soul. Club culture and live music combined.",
-    "stream_url": "http://prem4.di.fm:80/indiedance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/indiedance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 349,
@@ -501,7 +501,7 @@
     "name": "Jazz House",
     "asset_url": "//cdn-images.audioaddict.com/8/2/c/f/2/4/82cf24389049e24b0ccaa3f9ac0e2a7d.png",
     "description": "One of the biggest cultural soundtracks with the infectious thump of house music. Expect sultry saxophones, trumpets, and finger snapping grooves.",
-    "stream_url": "http://prem4.di.fm:80/jazzhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/jazzhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 293,
@@ -509,7 +509,7 @@
     "name": "Jungle",
     "asset_url": "//cdn-images.audioaddict.com/5/f/0/5/7/4/5f0574df2a3bbd3c189f6bc342a0251f.png",
     "description": "Jungle keeps the breakbeat tempos high and celebrates the diverse ideas found within urban and rave music.",
-    "stream_url": "http://prem4.di.fm:80/jungle_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/jungle_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 117,
@@ -517,7 +517,7 @@
     "name": "Latin House",
     "asset_url": "//cdn-images.audioaddict.com/0/9/3/b/6/8/093b684ccb65c586d6e4963db5173313.png",
     "description": "The sounds of Salsa, Brazilian beats and Latin Jazz with the steady grooves of modern East Coast dance music.",
-    "stream_url": "http://prem1.di.fm:80/latinhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/latinhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 105,
@@ -525,7 +525,7 @@
     "name": "Liquid DnB",
     "asset_url": "//cdn-images.audioaddict.com/6/7/5/9/9/a/67599a0b4f3575ea5f6a74fe633899d7.png",
     "description": "Smooth as water, with the fast paced rhythms, Liquid DNB / Drum and Bass flows with rolling ease without losing momentum.",
-    "stream_url": "http://prem1.di.fm:80/liquiddnb_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/liquiddnb_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 184,
@@ -533,7 +533,7 @@
     "name": "Liquid Dubstep",
     "asset_url": "//cdn-images.audioaddict.com/7/f/6/f/c/b/7f6fcbc1c010c58047782689524b426e.png",
     "description": "Smooth, rolling and steady – this fresh formation of Dubstep keeps the sounds you love with a flowing Drum and Bass groove.",
-    "stream_url": "http://prem1.di.fm:80/liquiddubstep_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/liquiddubstep_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 352,
@@ -541,7 +541,7 @@
     "name": "Liquid Trap",
     "asset_url": "//cdn-images.audioaddict.com/2/e/f/0/b/9/2ef0b92d92ae6ed621cab6e644b7b3b0.png",
     "description": "The smoother side of Trap but still packed with mechanical grooves and hip hop moods.",
-    "stream_url": "http://prem4.di.fm:80/liquidtrap_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/liquidtrap_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 492,
@@ -549,7 +549,7 @@
     "name": "LoFi Hip-Hop",
     "asset_url": "//cdn-images.audioaddict.com/c/e/6/8/6/7/ce686797af56662ba827f79a80b30dbf.png",
     "description": "Tastefully selected LoFi Hip-Hop tunes with textured atmospheres & laid back beats - with a dash of chillhop and perfectly designed to chill your ears.",
-    "stream_url": "http://prem1.di.fm:80/lofihiphop_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/lofihiphop_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 494,
@@ -557,7 +557,7 @@
     "name": "LoFi Lounge & Chill",
     "asset_url": "//cdn-images.audioaddict.com/b/9/7/d/1/a/b97d1a2b32ef58081200e7e1f90397e8.png",
     "description": "Punch your one-way ticket to peace of mind and mental clarity with this curated selection of LoFi Lounge & Chill tracks today.",
-    "stream_url": "http://prem4.di.fm:80/lofiloungenchill_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/lofiloungenchill_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 11,
@@ -565,7 +565,7 @@
     "name": "Lounge",
     "asset_url": "//cdn-images.audioaddict.com/4/6/8/b/6/4/468b644f4d8d3b3e3da48132f088da25.png",
     "description": "Music to chill to. Music made for when it’s all about kicking off your shoes, laying back, and totally relaxing.",
-    "stream_url": "http://prem1.di.fm:80/lounge_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/lounge_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 402,
@@ -573,7 +573,7 @@
     "name": "Melodic Progressive",
     "asset_url": "//cdn-images.audioaddict.com/e/8/0/4/0/a/e8040af705311c2c2cbaf333f1403031.png",
     "description": "The melodic side of progressive house, packed with driving rhythms and forward thinking sounds.",
-    "stream_url": "http://prem4.di.fm:80/melodicprogressive_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/melodicprogressive_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 59,
@@ -581,7 +581,7 @@
     "name": "Minimal",
     "asset_url": "//cdn-images.audioaddict.com/b/b/1/0/3/a/bb103ac2b80f76c178d042aa30b16170.png",
     "description": "Minimal fuses elements of house, techno and electronica and strips it back to focus on the spaces between the sound.",
-    "stream_url": "http://prem1.di.fm:80/minimal_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/minimal_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 294,
@@ -589,7 +589,7 @@
     "name": "Nightcore",
     "asset_url": "//cdn-images.audioaddict.com/9/5/9/0/f/0/9590f06c6cded1df66aa7919bdb04693.png",
     "description": "Pitched up vocals, happy hardcore beats, and high energy music non-stop.",
-    "stream_url": "http://prem1.di.fm:80/nightcore_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/nightcore_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 295,
@@ -597,7 +597,7 @@
     "name": "Nu Disco",
     "asset_url": "//cdn-images.audioaddict.com/b/e/9/b/8/7/be9b87c55b5022522b1c86b7a7daf61c.png",
     "description": "Modern disco music blending the familiar funk of the 70s and 80s with futuristic beats and up to date grooves.",
-    "stream_url": "http://prem1.di.fm:80/nudisco_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/nudisco_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 124,
@@ -605,7 +605,7 @@
     "name": "Oldschool Acid",
     "asset_url": "//cdn-images.audioaddict.com/0/9/b/e/b/4/09beb4103029fb4c29ac53e8818324c1.png",
     "description": "Acid, one of the characteristics of the TB-303, is celebrated here with the best tracks from house, techno and trance.",
-    "stream_url": "http://prem1.di.fm:80/oldschoolacid_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/oldschoolacid_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 104,
@@ -613,7 +613,7 @@
     "name": "Oldschool House",
     "asset_url": "//cdn-images.audioaddict.com/c/e/e/b/6/5/ceeb655c23a7a9a0f9c70c114e066cc8.png",
     "description": "The biggest classics and secret weapons – this is a true treasure chest of house tracks from back in the day.",
-    "stream_url": "http://prem1.di.fm:80/oldschoolhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/oldschoolhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 296,
@@ -621,7 +621,7 @@
     "name": "Oldschool Rave",
     "asset_url": "//cdn-images.audioaddict.com/9/5/f/b/0/9/95fb0958b6c4f970dd4c77a51cb50d04.png",
     "description": "Grab your whistles, white gloves and reach for the laser beams. This is the sound of raving when raving was new.",
-    "stream_url": "http://prem1.di.fm:80/oldschoolrave_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/oldschoolrave_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 14,
@@ -629,7 +629,7 @@
     "name": "Oldschool Techno & Trance ",
     "asset_url": "//cdn-images.audioaddict.com/9/3/7/c/e/3/937ce337fc10a20cfd62ece400ddbbd1.png",
     "description": "Go back in time and hear the biggest and best tracks within techno and trance that defined a decade of dance culture.",
-    "stream_url": "http://prem1.di.fm:80/classicelectronica_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/classicelectronica_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 7,
@@ -637,7 +637,7 @@
     "name": "Progressive",
     "asset_url": "//cdn-images.audioaddict.com/f/7/6/1/1/b/f7611b9c0568cda8ca446fc3a6743e73.png",
     "description": "Always moving forward, progressive continues to reinvent itself into new sounds and styles made for the floor.",
-    "stream_url": "http://prem1.di.fm:80/progressive_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/progressive_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 178,
@@ -645,7 +645,7 @@
     "name": "Progressive Psy",
     "asset_url": "//cdn-images.audioaddict.com/6/5/8/4/e/1/6584e11e53a641a76ebc8cb7adc9a6ce.png",
     "description": "Progress your mind to undiscovered psychedelic dimensions.",
-    "stream_url": "http://prem1.di.fm:80/progressivepsy_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/progressivepsy_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 285,
@@ -653,7 +653,7 @@
     "name": "Psybient",
     "asset_url": "//cdn-images.audioaddict.com/5/7/4/e/3/c/574e3cef76766ae077bfae1c1e3544b8.png",
     "description": "The psychedelic side of ambient.",
-    "stream_url": "http://prem1.di.fm:80/psybient_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/psybient_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 67,
@@ -661,7 +661,7 @@
     "name": "PsyChill",
     "asset_url": "//cdn-images.audioaddict.com/b/4/f/e/8/7/b4fe8792728a70b0a88cca3775e5d7a0.png",
     "description": "Downtempo psychedelic dub grooves, goa ambient, and world beats.",
-    "stream_url": "http://prem1.di.fm:80/psychill_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/psychill_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 509,
@@ -669,7 +669,7 @@
     "name": "PsyDub",
     "asset_url": "//cdn-images.audioaddict.com/0/3/9/e/1/2/039e12bc9a788fc8b787471888f8a601.png",
     "description": "Dub, ambient, and psychedelic trance, fused together in atmospheric harmony.",
-    "stream_url": "http://prem4.di.fm:80/psydub_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/psydub_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 518,
@@ -677,7 +677,7 @@
     "name": "Slap House",
     "asset_url": "//cdn-images.audioaddict.com/e/1/9/3/4/4/e19344d4543d2fc33073beb0254ca117.png",
     "description": "Deep melodic house music with energetic bass rhythms.",
-    "stream_url": "http://prem4.di.fm:80/slaphouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/slaphouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 47,
@@ -685,7 +685,7 @@
     "name": "Soulful House",
     "asset_url": "//cdn-images.audioaddict.com/a/1/3/b/2/5/a13b252c68c37d109df03ec8b191d8eb.png",
     "description": "House music saturated with feeling – full of melodies, vocals and true soul. Steady warm 4/4 vibes.",
-    "stream_url": "http://prem1.di.fm:80/soulfulhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/soulfulhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 64,
@@ -693,7 +693,7 @@
     "name": "Space Dreams",
     "asset_url": "//cdn-images.audioaddict.com/3/e/3/8/e/c/3e38ec35be74b15c3bc75fefff4d5e23.png",
     "description": "Ambient space music for expanding minds.",
-    "stream_url": "http://prem1.di.fm:80/spacemusic_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/spacemusic_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 506,
@@ -701,7 +701,7 @@
     "name": "Summer Chill House",
     "asset_url": "//cdn-images.audioaddict.com/9/6/d/c/7/0/96dc70308cb6912e5f8d933e2322de60.png",
     "description": "This selection of summer chill house classics has been handpicked to elicit that special summer feeling year-round.",
-    "stream_url": "http://prem4.di.fm:80/summerchillhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/summerchillhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 438,
@@ -709,7 +709,7 @@
     "name": "Synthwave",
     "asset_url": "//cdn-images.audioaddict.com/a/5/9/0/d/3/a590d3fc1d74e9c02c7f77597aae15a5.png",
     "description": "Influenced by video games and movie soundtracks of the 80s, Synthwave's mission continues today with great new music keeping things future retro.",
-    "stream_url": "http://prem1.di.fm:80/synthwave_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/synthwave_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 66,
@@ -717,7 +717,7 @@
     "name": "Tech House",
     "asset_url": "//cdn-images.audioaddict.com/9/b/2/7/b/e/9b27be813a685e9f15c80b296b31f3d8.png",
     "description": "Blending the warmth of house music with the cold structural precision of techno, tech house bridges the divide.",
-    "stream_url": "http://prem1.di.fm:80/techhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/techhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 36,
@@ -725,7 +725,7 @@
     "name": "Techno",
     "asset_url": "//cdn-images.audioaddict.com/7/a/3/1/4/a/7a314a3ff87e31013172e9099d9aa843.png",
     "description": "Techno is a true musical force full of structure and style. Robotic, mechanical and full of soul, always facing the future.",
-    "stream_url": "http://prem1.di.fm:80/techno_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/techno_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 1,
@@ -733,7 +733,7 @@
     "name": "Trance",
     "asset_url": "//cdn-images.audioaddict.com/b/1/0/5/6/7/b10567777ad265dcc63816fa32396654.png",
     "description": "Emotive dance music which embraces incredible melodies, future-facing production and energetic anthems heard worldwide.",
-    "stream_url": "http://prem1.di.fm:80/trance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/trance_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 230,
@@ -741,7 +741,7 @@
     "name": "Trap",
     "asset_url": "//cdn-images.audioaddict.com/8/7/f/b/e/e/87fbee0e8054878eb16965d89fdcd2ee.png",
     "description": "Born out of Southern Hip-Hop and influenced by techno, trap is analog drum machines / DnB & with hip-hop aesthetics.",
-    "stream_url": "http://prem1.di.fm:80/trap_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/trap_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 57,
@@ -749,7 +749,7 @@
     "name": "Tribal House",
     "asset_url": "//cdn-images.audioaddict.com/8/e/8/b/a/0/8e8ba06bac9a6bfaf799d87679e25e2f.png",
     "description": "The percussive side of the house and tech house scene, tribal house takes drums and puts them in the forefront.",
-    "stream_url": "http://prem1.di.fm:80/tribalhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/tribalhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 215,
@@ -757,7 +757,7 @@
     "name": "UMF Radio",
     "asset_url": "//cdn-images.audioaddict.com/9/d/b/f/e/f/9dbfeffeb888f28a2867c884e43aef1b.png",
     "description": "UMF Radio 24/7",
-    "stream_url": "http://prem4.di.fm:80/umfradio_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/umfradio_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 288,
@@ -765,7 +765,7 @@
     "name": "Underground Techno",
     "asset_url": "//cdn-images.audioaddict.com/b/a/0/d/f/6/ba0df6b7c1711d790f578d0db882fe0f.png",
     "description": "From gritty Berlin streets to dark corners of Brooklyn, this is techno made by artists pushing the genre further.",
-    "stream_url": "http://prem1.di.fm:80/undergroundtechno_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/undergroundtechno_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 142,
@@ -773,7 +773,7 @@
     "name": "Vocal Chillout",
     "asset_url": "//cdn-images.audioaddict.com/8/a/b/7/9/9/8ab79974e7c5b2f3c4b6c8139e5979d7.png",
     "description": "Relaxing vibes and a collection of vocal songs providing the laid back soundtrack to your day.",
-    "stream_url": "http://prem1.di.fm:80/vocalchillout_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/vocalchillout_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 445,
@@ -781,7 +781,7 @@
     "name": "Vocal House",
     "asset_url": "//cdn-images.audioaddict.com/f/e/d/a/e/5/fedae53adfeb1166901313071396ada0.png",
     "description": "The glorious 4/4 thump of House music paired perfectly with the human voice. Sultry, soulful, sexy sounds.",
-    "stream_url": "http://prem4.di.fm:80/vocalhouse_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem4.di.fm:80/vocalhouse_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 278,
@@ -789,7 +789,7 @@
     "name": "Vocal Lounge",
     "asset_url": "//cdn-images.audioaddict.com/e/2/a/c/f/4/e2acf4ce9f8154194f6e1c8076111a26.png",
     "description": "Laid back grooves and a collection of smooth vocals soothe the ears and relax the mind.",
-    "stream_url": "http://prem1.di.fm:80/vocallounge_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/vocallounge_hi?ca64cdc02f76c2c2"
   },
   {
     "id": 2,
@@ -797,6 +797,6 @@
     "name": "Vocal Trance",
     "asset_url": "//cdn-images.audioaddict.com/3/0/9/f/2/4/309f243a8a181ad83e8c5e15cd4b24c3.png",
     "description": "Lush vocals paired together with emotive dance music. Beautiful melodies and endless energy.",
-    "stream_url": "http://prem1.di.fm:80/vocaltrance_hi?listen_key=ca64cdc02f76c2c2"
+    "stream_url": "http://prem1.di.fm:80/vocaltrance_hi?ca64cdc02f76c2c2"
   }
 ]
