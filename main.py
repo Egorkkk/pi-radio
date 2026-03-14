@@ -121,6 +121,7 @@ def build_runtime_genres(config):
 
 def bootstrap_ui(config, persisted_state):
     pygame.init()
+    pygame.mixer.quit()
     display_backend = create_display_backend(
         platform_config=config.platform,
         window_title=WINDOW_TITLE,

@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import subprocess
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Optional
 
 from config import MPVConfig
@@ -25,6 +26,7 @@ class MpvBackend:
     _reconnect_after_monotonic: float = 0.0
     _started: bool = False
     _paused: bool = False
+    _log_path: Path = field(default_factory=lambda: Path("logs/mpv.log"))
 
     def start(self) -> None:
         self._started = True
@@ -135,7 +137,7 @@ class MpvBackend:
         self._online = False
         self._error_message = (
             f"mpv exited with code {return_code} for station "
-            f"'{self._current_station_id or 'unknown'}'."
+            f"'{self._current_station_id or 'unknown'}'. See {self._log_path}."
         )
         self._reconnect_after_monotonic = (
             now + max(self.config.reconnect_delay_seconds, 0.0)
@@ -156,31 +158,39 @@ class MpvBackend:
         self._terminate_process()
 
         command = self._build_mpv_command(self._current_stream_url)
+        log_handle = self._open_log_file()
+        self._write_log_header(command)
 
         try:
             self._process = subprocess.Popen(
                 command,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
+                stdout=log_handle,
+                stderr=subprocess.STDOUT,
                 stdin=subprocess.DEVNULL,
                 text=True,
             )
         except FileNotFoundError:
+            if log_handle is not None:
+                log_handle.close()
             self._process = None
             self._status = PlaybackStatus.ERROR
             self._online = False
             self._error_message = (
                 f"mpv executable '{self.config.executable}' was not found."
             )
+            self._append_log_line(self._error_message)
             self._reconnect_after_monotonic = (
                 time.monotonic() + max(self.config.reconnect_delay_seconds, 0.0)
             )
             return
         except OSError as exc:
+            if log_handle is not None:
+                log_handle.close()
             self._process = None
             self._status = PlaybackStatus.ERROR
             self._online = False
             self._error_message = f"Failed to start mpv: {exc}"
+            self._append_log_line(self._error_message)
             self._reconnect_after_monotonic = (
                 time.monotonic() + max(self.config.reconnect_delay_seconds, 0.0)
             )
@@ -198,8 +208,7 @@ class MpvBackend:
             self.config.executable,
             "--no-video",
             "--force-window=no",
-            "--really-quiet",
-            "--msg-level=all=no",
+            "--msg-level=all=v",
             f"--audio-device={self.config.audio_device}",
             f"--cache-secs={self.config.cache_seconds}",
         ]
@@ -227,8 +236,11 @@ class MpvBackend:
             except subprocess.TimeoutExpired:
                 process.kill()
                 process.wait(timeout=2.0)
-            except OSError:
-                pass
+            except OSError as exc:
+                self._append_log_line(f"Failed to terminate mpv cleanly: {exc}")
+                return
+
+        self._append_log_line(f"mpv process exited with code {process.returncode}")
 
     def _snapshot(self) -> PlaybackSnapshot:
         return PlaybackSnapshot(
@@ -237,3 +249,27 @@ class MpvBackend:
             online=self._online,
             error_message=self._error_message,
         )
+
+    def _open_log_file(self):
+        try:
+            self._log_path.parent.mkdir(parents=True, exist_ok=True)
+            return self._log_path.open("a", encoding="utf-8")
+        except OSError as exc:
+            self._append_log_line(f"Failed to open mpv log file {self._log_path}: {exc}")
+            return None
+
+    def _write_log_header(self, command: list[str]) -> None:
+        timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+        self._append_log_line("")
+        self._append_log_line(f"===== mpv launch {timestamp} =====")
+        self._append_log_line(f"station_id={self._current_station_id}")
+        self._append_log_line(f"stream_url={self._current_stream_url}")
+        self._append_log_line(f"command={' '.join(command)}")
+
+    def _append_log_line(self, line: str) -> None:
+        try:
+            self._log_path.parent.mkdir(parents=True, exist_ok=True)
+            with self._log_path.open("a", encoding="utf-8") as fh:
+                fh.write(f"{line}\n")
+        except OSError:
+            pass
