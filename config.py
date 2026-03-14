@@ -14,9 +14,11 @@ DEFAULT_SETTINGS_PATH = Path("settings.toml")
 class DIFMConfig:
     username: str = ""
     password: str = ""
+    listen_key: str = ""
     network: str = "di"
-    stream_quality: str = "premium"
+    stream_quality: str = "premium_high"
     request_timeout_seconds: float = 15.0
+    channels_cache_file: Path = Path("cache/difm_channels.json")
 
 
 @dataclass(slots=True, frozen=True)
@@ -85,9 +87,13 @@ def _load_difm_config(data: dict[str, Any]) -> DIFMConfig:
     return DIFMConfig(
         username=str(data.get("username", "")),
         password=str(data.get("password", "")),
+        listen_key=str(data.get("listen_key", "")),
         network=str(data.get("network", "di")),
-        stream_quality=str(data.get("stream_quality", "premium")),
+        stream_quality=str(data.get("stream_quality", "premium_high")),
         request_timeout_seconds=float(data.get("request_timeout_seconds", 15.0)),
+        channels_cache_file=Path(
+            str(data.get("channels_cache_file", "cache/difm_channels.json"))
+        ),
     )
 
 

@@ -14,11 +14,15 @@ from app import (
     update_state,
 )
 from config import load_config
+from difm_catalog import DIFMCatalog
+from difm_client import DIFMClient, DIFMClientError
+from difm_genre_map import load_difm_genre_map
 from mpv_backend import MpvBackend
 from radio_catalog import RadioCatalog
 from radio_controller import RadioController
 from renderer import UIRenderer
 from runtime_persistence import RuntimePersistence
+from sample_data import build_sample_genres
 from station_selection_policy import StationSelectionPolicy
 
 
@@ -84,10 +88,42 @@ def save_runtime_selection(persistence: RuntimePersistence, state, enabled: bool
     )
 
 
+def build_runtime_catalog(config) -> RadioCatalog:
+    client = DIFMClient(config.difm)
+    channels = client.fetch_channels(use_cache_fallback=True)
+    difm_catalog = DIFMCatalog(channels)
+    genre_map = load_difm_genre_map("difm_genres.txt")
+    return RadioCatalog.from_difm(
+        difm_catalog=difm_catalog,
+        genre_map=genre_map,
+    )
+
+
+def build_runtime_genres(config):
+    try:
+        catalog = build_runtime_catalog(config)
+        ui_genres = catalog.build_ui_genres()
+        if ui_genres:
+            return catalog, ui_genres
+    except DIFMClientError as exc:
+        print(f"[pi-radio] DI.FM catalog load failed: {exc}")
+    except OSError as exc:
+        print(f"[pi-radio] Failed to load runtime genre map/catalog: {exc}")
+
+    fallback_genres = build_sample_genres()
+    fallback_catalog = RadioCatalog(
+        genres=(),
+        stations=(),
+    )
+    return fallback_catalog, fallback_genres
+
+
 def main() -> None:
     config = load_config()
     persistence = RuntimePersistence(config.persistence.state_file)
     persisted_state = persistence.load()
+
+    catalog, runtime_genres = build_runtime_genres(config)
 
     pygame.init()
 
@@ -97,10 +133,9 @@ def main() -> None:
 
     clock = pygame.time.Clock()
     renderer = UIRenderer()
-    state = create_initial_state()
+    state = create_initial_state(runtime_genres)
     apply_persisted_selection(state, persisted_state)
 
-    catalog = RadioCatalog(state.genres)
     backend = MpvBackend(config=config.mpv)
     selection_policy = StationSelectionPolicy(
         settle_epsilon=1.0,

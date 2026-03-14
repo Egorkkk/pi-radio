@@ -1,9 +1,8 @@
-# app.py
-
 from __future__ import annotations
 
 import layout
 from dial import build_genre_scale, build_station_scale, jump_to_item, nudge_target, update_dial
+from models import Genre
 from sample_data import build_sample_genres
 from state import UIState
 
@@ -18,8 +17,9 @@ GENRE_HYSTERESIS = 6.0
 STATION_HYSTERESIS = 8.0
 
 
-def create_initial_state() -> UIState:
-    genres = build_sample_genres()
+def create_initial_state(genres: tuple[Genre, ...] | None = None) -> UIState:
+    if genres is None:
+        genres = build_sample_genres()
 
     initial_genre_id = genres[0].id if genres else None
     initial_station_id = genres[0].stations[0].id if genres and genres[0].stations else None
@@ -98,14 +98,6 @@ def move_station_left(state: UIState) -> None:
 
 def move_station_right(state: UIState) -> None:
     nudge_target(state.station_dial, STATION_INPUT_STEP, state.station_scale)
-
-
-def toggle_play(state: UIState) -> None:
-    state.play = not state.play
-
-
-def toggle_online(state: UIState) -> None:
-    state.online = not state.online
 
 
 def toggle_debug(state: UIState) -> None:

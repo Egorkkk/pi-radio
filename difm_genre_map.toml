@@ -1,0 +1,105 @@
+[genres.trance]
+title = "TRANCE"
+channels = [
+  "trance",
+  "vocaltrance",
+  "progressive",
+  "upliftingtrance",
+  "techtrance",
+  "psychedelictrance",
+  "goapsy",
+  "dreamstate",
+  "epictrance",
+  "trancelovers",
+]
+
+[genres.house]
+title = "HOUSE"
+channels = [
+  "house",
+  "deephouse",
+  "electrohouse",
+  "funkyhouse",
+  "soulfulhouse",
+  "jackinhouse",
+  "tribalhouse",
+  "discohouse",
+  "chilltropicalhouse",
+]
+
+[genres.techno]
+title = "TECHNO"
+channels = [
+  "techno",
+  "minimal",
+  "detroittechno",
+  "acidtechno",
+  "melodictechno",
+  "hardtechno",
+  "peaktime",
+]
+
+[genres.chill]
+title = "CHILL"
+channels = [
+  "chillout",
+  "ambient",
+  "spacedreams",
+  "chillhop",
+  "chillstep",
+  "downtempolounge",
+  "balearic",
+]
+
+[genres.bass]
+title = "BASS"
+channels = [
+  "drumandbass",
+  "liquiddnb",
+  "dubstep",
+  "drumstep",
+  "futurebass",
+  "trap",
+]
+
+[genres.vocal]
+title = "VOCAL"
+channels = [
+  "vocalchillout",
+  "vocaltrance",
+  "vocalhouse",
+]
+
+[genres.hard]
+title = "HARD"
+channels = [
+  "hardcore",
+  "harddance",
+  "hardstyle",
+  "gabber",
+]
+
+[genres.synth]
+title = "SYNTH"
+channels = [
+  "futuresynthpop",
+  "synthwave",
+]
+
+[genres.classic]
+title = "CLASSIC"
+channels = [
+  "classictechno",
+  "classictrance",
+  "oldschoolacid",
+]
+
+[genres.radio]
+title = "RADIO"
+channels = [
+  "djmixes",
+]
+
+[unassigned]
+id = "misc"
+title = "MISC"

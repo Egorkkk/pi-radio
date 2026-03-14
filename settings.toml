@@ -1,9 +1,11 @@
 [difm]
 username = "ad.rasao@gmail.com"
 password = "rjue12ws"
+listen_key = "ca64cdc02f76c2c2"
 network = "di"
-stream_quality = "premium"
+stream_quality = "premium_high"
 request_timeout_seconds = 15.0
+channels_cache_file = "cache/difm_channels.json"
 
 [mpv]
 executable = "mpv"
