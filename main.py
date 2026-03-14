@@ -26,6 +26,7 @@ from radio_controller import RadioController
 from renderer import UIRenderer
 from runtime_persistence import RuntimePersistence
 from sample_data import build_sample_genres
+from startup_splash import draw_startup_splash
 from station_selection_policy import StationSelectionPolicy
 
 
@@ -121,14 +122,16 @@ def build_runtime_genres(config):
     return fallback_catalog, fallback_genres
 
 
-def bootstrap_ui(config, persisted_state, initial_genres):
+def bootstrap_display(config):
     pygame.init()
     pygame.mixer.quit()
-    display_backend = create_display_backend(
+    return create_display_backend(
         platform_config=config.platform,
         window_title=WINDOW_TITLE,
     )
 
+
+def bootstrap_ui(display_backend, persisted_state, initial_genres):
     renderer = UIRenderer()
     state = create_initial_state(initial_genres)
     apply_persisted_selection(state, persisted_state)
@@ -157,10 +160,14 @@ def main() -> None:
     config = load_config()
     persistence = RuntimePersistence(config.persistence.state_file)
     persisted_state = persistence.load()
+    display_backend = bootstrap_display(config)
+    draw_startup_splash(display_backend.surface)
+    display_backend.present()
+
     catalog, runtime_genres = build_runtime_genres(config)
 
     display_backend, renderer, state = bootstrap_ui(
-        config,
+        display_backend,
         persisted_state,
         runtime_genres,
     )
