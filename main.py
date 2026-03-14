@@ -18,6 +18,7 @@ from difm_catalog import DIFMCatalog
 from difm_client import DIFMClient, DIFMClientError
 from difm_genre_map import load_difm_genre_map
 from mpv_backend import MpvBackend
+from platform_runtime import create_display_backend
 from radio_catalog import RadioCatalog
 from radio_controller import RadioController
 from renderer import UIRenderer
@@ -118,23 +119,50 @@ def build_runtime_genres(config):
     return fallback_catalog, fallback_genres
 
 
+def bootstrap_ui(config, persisted_state):
+    pygame.init()
+    display_backend = create_display_backend(
+        platform_config=config.platform,
+        window_title=WINDOW_TITLE,
+    )
+
+    renderer = UIRenderer()
+    state = create_initial_state(build_sample_genres())
+    apply_persisted_selection(state, persisted_state)
+
+    renderer.render(display_backend.surface, state)
+    display_backend.present()
+    return display_backend, renderer, state
+
+
+def replace_state_genres(state, runtime_genres, persisted_state) -> None:
+    state.genres = runtime_genres
+
+    if runtime_genres:
+        state.selected_genre_id = runtime_genres[0].id
+        first_station_id = runtime_genres[0].stations[0].id if runtime_genres[0].stations else None
+        state.selected_station_id = first_station_id
+    else:
+        state.selected_genre_id = None
+        state.selected_station_id = None
+
+    initialize_scales(state)
+    apply_persisted_selection(state, persisted_state)
+
+
 def main() -> None:
     config = load_config()
     persistence = RuntimePersistence(config.persistence.state_file)
     persisted_state = persistence.load()
 
+    display_backend, renderer, state = bootstrap_ui(config, persisted_state)
+
     catalog, runtime_genres = build_runtime_genres(config)
-
-    pygame.init()
-
-    flags = pygame.FULLSCREEN if config.platform.fullscreen else 0
-    screen = pygame.display.set_mode((layout.SCREEN_W, layout.SCREEN_H), flags)
-    pygame.display.set_caption(WINDOW_TITLE)
+    replace_state_genres(state, runtime_genres, persisted_state)
+    renderer.render(display_backend.surface, state)
+    display_backend.present()
 
     clock = pygame.time.Clock()
-    renderer = UIRenderer()
-    state = create_initial_state(runtime_genres)
-    apply_persisted_selection(state, persisted_state)
 
     backend = MpvBackend(config=config.mpv)
     selection_policy = StationSelectionPolicy(
@@ -157,7 +185,7 @@ def main() -> None:
             handle_events(state)
             update_state(state, dt)
             controller.update(state, dt)
-            renderer.render(screen, state)
+            renderer.render(display_backend.surface, state)
 
             if (
                 state.selected_genre_id != last_saved_genre_id
@@ -171,7 +199,7 @@ def main() -> None:
                 last_saved_genre_id = state.selected_genre_id
                 last_saved_station_id = state.selected_station_id
 
-            pygame.display.flip()
+            display_backend.present()
     finally:
         save_runtime_selection(
             persistence=persistence,
@@ -179,6 +207,7 @@ def main() -> None:
             enabled=config.persistence.save_on_station_change,
         )
         controller.shutdown()
+        display_backend.shutdown()
         pygame.quit()
 
 
