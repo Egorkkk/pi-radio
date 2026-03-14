@@ -121,7 +121,7 @@ def build_runtime_genres(config):
     return fallback_catalog, fallback_genres
 
 
-def bootstrap_ui(config, persisted_state):
+def bootstrap_ui(config, persisted_state, initial_genres):
     pygame.init()
     pygame.mixer.quit()
     display_backend = create_display_backend(
@@ -130,7 +130,7 @@ def bootstrap_ui(config, persisted_state):
     )
 
     renderer = UIRenderer()
-    state = create_initial_state(build_sample_genres())
+    state = create_initial_state(initial_genres)
     apply_persisted_selection(state, persisted_state)
 
     renderer.render(display_backend.surface, state)
@@ -157,13 +157,13 @@ def main() -> None:
     config = load_config()
     persistence = RuntimePersistence(config.persistence.state_file)
     persisted_state = persistence.load()
-
-    display_backend, renderer, state = bootstrap_ui(config, persisted_state)
-
     catalog, runtime_genres = build_runtime_genres(config)
-    replace_state_genres(state, runtime_genres, persisted_state)
-    renderer.render(display_backend.surface, state)
-    display_backend.present()
+
+    display_backend, renderer, state = bootstrap_ui(
+        config,
+        persisted_state,
+        runtime_genres,
+    )
 
     clock = pygame.time.Clock()
 
