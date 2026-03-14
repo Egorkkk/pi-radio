@@ -1,0 +1,75 @@
+
+===== mpv launch 2026-03-14 22:08:45 =====
+station_id=difm:detroithousentechno
+stream_url=http://prem4.di.fm:80/detroithousentechno_hi?listen_key=ca64cdc02f76c2c2
+command=mpv --no-video --force-window=no --msg-level=all=v --audio-device=auto --cache-secs=8.0 --idle=yes --no-video --force-window=no --volume=100 http://prem4.di.fm:80/detroithousentechno_hi?listen_key=ca64cdc02f76c2c2
+[cplayer] Command line options: '--no-video' '--force-window=no' '--msg-level=all=v' '--audio-device=auto' '--cache-secs=8.0' '--idle=yes' '--no-video' '--force-window=no' '--volume=100' 'http://prem4.di.fm:80/detroithousentechno_hi?listen_key=ca64cdc02f76c2c2'
+[cplayer] mpv v0.40.0 Copyright © 2000-2025 mpv/MPlayer/mplayer2 projects
+[cplayer] libplacebo version: v7.349.0
+[cplayer] FFmpeg version: 7.1.2-0+deb13u1 (runtime 7.1.3-0+deb13u1+rpt1)
+[cplayer] FFmpeg library versions:
+[cplayer]    libavcodec      61.19.101
+[cplayer]    libavdevice     61.3.100
+[cplayer]    libavfilter     10.4.100
+[cplayer]    libavformat     61.7.100
+[cplayer]    libavutil       59.39.100
+[cplayer]    libswresample   5.3.100
+[cplayer]    libswscale      8.3.100
+[cplayer] Configuration: -Dpython.bytecompile=-1 -Dlibmpv=true -Dbuild-date=false -Dcdda=enabled -Ddvdnav=enabled -Dsdl2=enabled -Ddvbin=enabled -Dprefix=/usr -Dlibdir=lib/aarch64-linux-gnu -Dlocalstatedir=/var -Dsysconfdir=/etc -Dbuildtype=plain -Dwrap_mode=nodownload
+[cplayer] List of enabled features: alsa caca cdda cplugins cuda-hwaccel cuda-interop dmabuf-interop-gl dmabuf-wayland drm dvbin dvdnav egl egl-drm egl-wayland egl-x11 ffmpeg ffnvcodec gbm gl glibc-thread-name glob glob-posix gpl iconv jack javascript jpeg lcms2 libarchive libass libavdevice libbluray libdl libplacebo linux-fstatfs lua52 memfd-create memrchr pipewire posix posix-shm ppoll pthread-condattr-setclock pulse rubberband rubberband-3 sdl2 sdl2-audio sdl2-gamepad sdl2-video sixel sndio sndio-1-9 uchardet vaapi vaapi-drm vaapi-wayland vaapi-x11 vdpau vector vk-khr-display vt.h vulkan wayland wayland-protocols-1-32 wayland-protocols-1-38 wayland-protocols-1-39 wayland-protocols-1-41 x11 xv zimg zimg-st428 zlib
+[cplayer] Reading config file /etc/mpv/encoding-profiles.conf
+[ifo_dvdnav] Opening /etc/mpv/encoding-profiles.conf
+[bdmv/bluray] Opening /etc/mpv/encoding-profiles.conf
+[file] Opening /etc/mpv/encoding-profiles.conf
+[cplayer] Applying profile 'default'...
+[cplayer] Setting option 'video' = 'no' (flags = 8)
+[cplayer] Setting option 'force-window' = 'no' (flags = 8)
+[cplayer] Setting option 'msg-level' = 'all=v' (flags = 8)
+[cplayer] Setting option 'audio-device' = 'auto' (flags = 8)
+[cplayer] Setting option 'cache-secs' = '8.0' (flags = 8)
+[cplayer] Setting option 'idle' = 'yes' (flags = 8)
+[cplayer] Setting option 'video' = 'no' (flags = 8)
+[cplayer] Setting option 'force-window' = 'no' (flags = 8)
+[cplayer] Setting option 'volume' = '100' (flags = 8)
+[clipboard] Initialized vo clipboard backend.
+[cplayer] Waiting for scripts...
+[cplayer] Set property: user-data/osc/visibility="auto" -> 1
+[cplayer] Set property: user-data/osc/margins={"r":0,"b":0,"l":0,"t":0} -> 1
+[cplayer] Done loading scripts.
+[cplayer] Running hook: auto_profiles/on_before_start_file
+[cplayer] Failed sending hook command auto_profiles/on_before_start_file. Removing hook.
+[cplayer] Running hook: auto_profiles/on_load
+[cplayer] Failed sending hook command auto_profiles/on_load. Removing hook.
+[cplayer] Running hook: ytdl_hook/on_load
+[cplayer] Running hook: ytdl_hook/on_load
+[ytdl_hook] playlist hook
+[stream_callback] Opening http://prem4.di.fm:80/detroithousentechno_hi?listen_key=ca64cdc02f76c2c2
+[ffmpeg] Opening http://prem4.di.fm:80/detroithousentechno_hi?listen_key=ca64cdc02f76c2c2
+[cplayer] Set property: user-data/osc/margins={"r":0,"b":0,"l":0,"t":0} -> 1
+[cplayer] Set property: user-data/osc/margins={"r":0,"b":0,"l":0,"t":0} -> 1
+[osd/libass] libass API version: 0x1703000
+[osd/libass] libass source: tarball: 0.17.3
+[osd/libass] Shaper: FriBidi 1.0.15 (SIMPLE) HarfBuzz-ng 10.2.0 (COMPLEX)
+[osd/libass] Setting up fonts...
+[osd/libass] Using font provider fontconfig
+[osd/libass] Done.
+[ffmpeg] http: HTTP error 401 Authentication Required
+Failed to open http://prem4.di.fm:80/detroithousentechno_hi?listen_key=ca64cdc02f76c2c2.
+[cplayer] Opening failed or was aborted: http://prem4.di.fm:80/detroithousentechno_hi?listen_key=ca64cdc02f76c2c2
+[cplayer] Running hook: ytdl_hook/on_load_fail
+[ytdl_hook] Video disabled. Only using audio
+[ytdl_hook] No youtube-dl found with path yt-dlp in config directories
+[ytdl_hook] Starting subprocess: [yt-dlp, --no-warnings, -J, --flat-playlist, --sub-format, ass/srt/best, --format, bestaudio/best, --sub-langs, all, --write-srt, --no-playlist, --, http://prem4.di.fm:80/detroithousentechno_hi?listen_key=ca64cdc02f76c2c2]
+[ytdl_hook] Found youtube-dl with path yt-dlp in PATH
+[cplayer] Set property: user-data/mpv/ytdl/path="yt-dlp" -> 1
+[cplayer] Set property: user-data/mpv/ytdl/json-subprocess-result={"stdout":"null\n","error_string":"","status":1,"killed_by_us":false,"stderr":"ERROR: [generic] Unable to download webpage: HTTP Error 401: Authentication Required (caused by <HTTPError 401: Authentication Required>)\n"} -> 1
+[ytdl_hook] status: 1
+[ytdl_hook] reason: 
+[ytdl_hook] stdout: null
+[ytdl_hook] 
+[ytdl_hook] stderr: ERROR: [generic] Unable to download webpage: HTTP Error 401: Authentication Required (caused by <HTTPError 401: Authentication Required>)
+[ytdl_hook] 
+[ytdl_hook] ERROR: [generic] Unable to download webpage: HTTP Error 401: Authentication Required (caused by <HTTPError 401: Authentication Required>)
+[ytdl_hook] youtube-dl failed: unexpected error occurred
+[cplayer] finished playback, loading failed (reason 4)
+[cplayer] Running hook: ytdl_hook/on_after_end_file
