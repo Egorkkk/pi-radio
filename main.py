@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from time import perf_counter
+
 import pygame
 
 import layout
@@ -186,7 +188,11 @@ def main() -> None:
             handle_events(state)
             update_state(state, dt)
             controller.update(state, dt)
-            renderer.render(display_backend.surface, state)
+            should_present = renderer.needs_render(state)
+            if should_present:
+                renderer.render(display_backend.surface, state)
+            else:
+                renderer.note_skipped_frame()
 
             if (
                 state.selected_genre_id != last_saved_genre_id
@@ -200,7 +206,10 @@ def main() -> None:
                 last_saved_genre_id = state.selected_genre_id
                 last_saved_station_id = state.selected_station_id
 
-            display_backend.present()
+            if should_present:
+                present_started_at = perf_counter()
+                display_backend.present()
+                renderer.note_present_duration(perf_counter() - present_started_at)
     finally:
         save_runtime_selection(
             persistence=persistence,
