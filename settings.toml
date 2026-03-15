@@ -20,7 +20,7 @@ extra_args = [
 ]
 
 [platform]
-mode = "pi"
+mode = "wsl"
 fullscreen = true
 framebuffer_device = "/dev/fb0"
 width = 480

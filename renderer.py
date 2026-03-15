@@ -291,35 +291,6 @@ class UIRenderer:
         pygame.draw.rect(surface, (58, 36, 18), rect, width=1, border_radius=10)
         pygame.draw.rect(surface, (28, 16, 10), inner, width=1, border_radius=8)
 
-        pygame.draw.line(
-            surface,
-            (72, 44, 20),
-            (rect.left + 28, layout.INFO_DECOR_LINE_Y_TOP),
-            (rect.right - 28, layout.INFO_DECOR_LINE_Y_TOP),
-            1,
-        )
-        pygame.draw.line(
-            surface,
-            (48, 28, 14),
-            (rect.left + 28, layout.INFO_DECOR_LINE_Y_BOTTOM),
-            (rect.right - 28, layout.INFO_DECOR_LINE_Y_BOTTOM),
-            1,
-        )
-        pygame.draw.line(
-            surface,
-            (90, 54, 22),
-            (rect.left + 18, rect.centery),
-            (rect.left + 34, rect.centery),
-            1,
-        )
-        pygame.draw.line(
-            surface,
-            (90, 54, 22),
-            (rect.right - 34, rect.centery),
-            (rect.right - 18, rect.centery),
-            1,
-        )
-
     def _draw_center_panel_content(self, surface: pygame.Surface, state: UIState) -> None:
         clock_surf = self._get_text_surface(
             text=state.clock_text,
