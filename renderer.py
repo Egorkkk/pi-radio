@@ -496,9 +496,10 @@ class UIRenderer:
         overlay = pygame.Surface(size, pygame.SRCALPHA).convert_alpha()
 
         max_edge_alpha = 210
-        max_top_bottom_alpha = 70
-        facet_alpha = 110
-        facet_w = 42
+        max_top_bottom_alpha = 140
+        facet_alpha = 210
+        facet_w = 102
+        facet_span = max(1, facet_w - 1)
 
         for x in range(width):
             nx = abs((x / max(1, width - 1)) * 2 - 1)
@@ -523,7 +524,8 @@ class UIRenderer:
             )
 
         for x in range(facet_w):
-            alpha = int((1 - x / max(1, facet_w)) * facet_alpha)
+            nx = x / facet_span
+            alpha = int((1 - (3 * nx * nx - 2 * nx * nx * nx)) * facet_alpha)
             pygame.draw.line(
                 overlay,
                 (0, 0, 0, alpha),
