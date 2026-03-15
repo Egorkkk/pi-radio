@@ -51,7 +51,7 @@ class PersistenceConfig:
 class InputConfig:
     keyboard_enabled: bool = True
     encoder_support_enabled: bool = False
-    touch_support_enabled: bool = False
+    touch_support_enabled: bool = True
     volume_adc_enabled: bool = False
     power_switch_support_enabled: bool = False
 

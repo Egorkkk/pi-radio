@@ -34,6 +34,6 @@ save_on_station_change = true
 [input]
 keyboard_enabled = true
 encoder_support_enabled = false
-touch_support_enabled = false
+touch_support_enabled = true
 volume_adc_enabled = false
 power_switch_support_enabled = false

@@ -1,1 +1,1 @@
-http://prem1.di.fm:80/progressive_hi?ca64cdc02f76c2c2
+PI_RADIO_TOUCH_DEBUG=1 PI_RADIO_TOUCH_DEBUG_RAW=1 python3 main.py
