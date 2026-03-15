@@ -318,13 +318,14 @@ class UIRenderer:
             return
 
         gap = 92
+        indicators_y = layout.INDICATORS_Y - 7
         total_w = (len(indicators) - 1) * gap
         start_x = layout.CENTER_X - total_w // 2
 
         for idx, ind in enumerate(indicators):
             x = start_x + idx * gap
             dot_x = x - 14
-            dot_y = layout.INDICATORS_Y + 7
+            dot_y = indicators_y + 7
 
             pygame.draw.circle(
                 surface,
@@ -338,7 +339,7 @@ class UIRenderer:
                 font=self.font_small,
                 color=theme.TEXT_MAIN,
             )
-            surface.blit(text_surf, (x, layout.INDICATORS_Y))
+            surface.blit(text_surf, (x, indicators_y))
 
     def _draw_genre_scale(self, surface: pygame.Surface, state: UIState) -> None:
         old_clip = self._with_clip(surface, self._genre_clip_rect)
