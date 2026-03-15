@@ -1,0 +1,59 @@
+pygame 2.6.1 (SDL 2.32.4, Python 3.13.5)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[pi-radio][render-profile] frames=30 rendered=2 skipped=28 frame_avg=17.83ms frame_max=19.58ms background_avg=0.85ms background_max=1.02ms center_panel_avg=4.55ms center_panel_max=6.71ms genre_scale_avg=3.40ms genre_scale_max=4.19ms station_scale_avg=5.50ms station_scale_max=5.58ms foreground_avg=3.40ms foreground_max=4.50ms
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=1 skipped=29 frame_avg=7.43ms frame_max=7.43ms background_avg=0.70ms background_max=0.70ms center_panel_avg=0.77ms center_panel_max=0.77ms genre_scale_avg=0.62ms genre_scale_max=0.62ms station_scale_avg=1.42ms station_scale_max=1.42ms foreground_avg=3.83ms foreground_max=3.83ms present_avg=3.66ms present_max=3.66ms
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=4 skipped=26 frame_avg=8.51ms frame_max=9.13ms background_avg=0.70ms background_max=0.74ms center_panel_avg=0.60ms center_panel_max=0.64ms genre_scale_avg=0.57ms genre_scale_max=0.63ms station_scale_avg=2.50ms station_scale_max=3.27ms foreground_avg=4.06ms foreground_max=4.55ms present_avg=111.61ms present_max=149.26ms
+[pi-radio][render-profile] frames=30 rendered=8 skipped=22 frame_avg=7.52ms frame_max=9.75ms background_avg=0.77ms background_max=1.05ms center_panel_avg=0.88ms center_panel_max=2.11ms genre_scale_avg=0.54ms genre_scale_max=0.73ms station_scale_avg=1.64ms station_scale_max=2.48ms foreground_avg=3.59ms foreground_max=4.44ms present_avg=100.52ms present_max=152.30ms
+[pi-radio][render-profile] frames=30 rendered=8 skipped=22 frame_avg=5.53ms frame_max=7.88ms background_avg=0.71ms background_max=0.87ms center_panel_avg=0.40ms center_panel_max=0.42ms genre_scale_avg=0.35ms genre_scale_max=0.36ms station_scale_avg=1.04ms station_scale_max=1.58ms foreground_avg=2.97ms foreground_max=4.57ms present_avg=107.69ms present_max=150.01ms
+[pi-radio][render-profile] frames=30 rendered=6 skipped=24 frame_avg=6.07ms frame_max=7.35ms background_avg=0.72ms background_max=0.80ms center_panel_avg=0.57ms center_panel_max=1.07ms genre_scale_avg=0.35ms genre_scale_max=0.36ms station_scale_avg=1.07ms station_scale_max=1.78ms foreground_avg=3.29ms foreground_max=4.37ms present_avg=100.73ms present_max=148.95ms
+[pi-radio][render-profile] frames=30 rendered=8 skipped=22 frame_avg=6.60ms frame_max=12.91ms background_avg=0.75ms background_max=1.08ms center_panel_avg=0.48ms center_panel_max=0.60ms genre_scale_avg=0.90ms genre_scale_max=4.73ms station_scale_avg=1.58ms station_scale_max=5.13ms foreground_avg=2.80ms foreground_max=5.44ms present_avg=108.29ms present_max=148.31ms
+[pi-radio][render-profile] frames=30 rendered=7 skipped=23 frame_avg=6.79ms frame_max=12.35ms background_avg=0.79ms background_max=1.08ms center_panel_avg=1.30ms center_panel_max=5.11ms genre_scale_avg=0.41ms genre_scale_max=0.58ms station_scale_avg=1.32ms station_scale_max=3.17ms foreground_avg=2.88ms foreground_max=4.45ms present_avg=91.73ms present_max=149.95ms
+[pi-radio][render-profile] frames=30 rendered=3 skipped=27 frame_avg=6.72ms frame_max=10.15ms background_avg=0.85ms background_max=1.08ms center_panel_avg=0.53ms center_panel_max=0.62ms genre_scale_avg=0.37ms genre_scale_max=0.39ms station_scale_avg=2.49ms station_scale_max=5.62ms foreground_avg=2.42ms foreground_max=2.48ms present_avg=97.65ms present_max=146.38ms
+[pi-radio][render-profile] frames=30 rendered=8 skipped=22 frame_avg=4.83ms frame_max=4.98ms background_avg=0.67ms background_max=0.74ms center_panel_avg=0.47ms center_panel_max=0.60ms genre_scale_avg=0.36ms genre_scale_max=0.43ms station_scale_avg=0.88ms station_scale_max=1.02ms foreground_avg=2.38ms foreground_max=2.56ms present_avg=109.33ms present_max=153.22ms
+[pi-radio][render-profile] frames=30 rendered=14 skipped=16 frame_avg=6.21ms frame_max=8.70ms background_avg=0.74ms background_max=0.95ms center_panel_avg=0.49ms center_panel_max=0.57ms genre_scale_avg=0.35ms genre_scale_max=0.37ms station_scale_avg=1.08ms station_scale_max=1.82ms foreground_avg=3.46ms foreground_max=6.14ms present_avg=119.12ms present_max=149.96ms
+[pi-radio][render-profile] frames=30 rendered=16 skipped=14 frame_avg=6.64ms frame_max=9.73ms background_avg=0.74ms background_max=0.93ms center_panel_avg=0.62ms center_panel_max=2.30ms genre_scale_avg=0.42ms genre_scale_max=0.61ms station_scale_avg=1.30ms station_scale_max=4.63ms foreground_avg=3.47ms foreground_max=7.13ms present_avg=130.28ms present_max=154.29ms
+[pi-radio][render-profile] frames=30 rendered=11 skipped=19 frame_avg=7.02ms frame_max=10.86ms background_avg=0.77ms background_max=0.99ms center_panel_avg=0.52ms center_panel_max=1.12ms genre_scale_avg=0.76ms genre_scale_max=4.45ms station_scale_avg=1.68ms station_scale_max=6.12ms foreground_avg=3.22ms foreground_max=6.91ms present_avg=111.83ms present_max=147.62ms
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=9 skipped=21 frame_avg=8.39ms frame_max=10.49ms background_avg=0.93ms background_max=2.04ms center_panel_avg=0.98ms center_panel_max=2.73ms genre_scale_avg=0.64ms genre_scale_max=0.71ms station_scale_avg=1.53ms station_scale_max=1.83ms foreground_avg=4.21ms foreground_max=5.23ms present_avg=114.60ms present_max=151.08ms
+[pi-radio][render-profile] frames=30 rendered=15 skipped=15 frame_avg=6.01ms frame_max=9.65ms background_avg=0.73ms background_max=0.94ms center_panel_avg=0.50ms center_panel_max=0.53ms genre_scale_avg=0.66ms genre_scale_max=5.06ms station_scale_avg=0.87ms station_scale_max=1.01ms foreground_avg=3.18ms foreground_max=6.18ms present_avg=131.02ms present_max=153.14ms
+[pi-radio][render-profile] frames=30 rendered=11 skipped=19 frame_avg=6.22ms frame_max=8.86ms background_avg=0.73ms background_max=0.93ms center_panel_avg=0.46ms center_panel_max=0.52ms genre_scale_avg=0.38ms genre_scale_max=0.45ms station_scale_avg=0.91ms station_scale_max=1.11ms foreground_avg=3.66ms foreground_max=6.53ms present_avg=110.50ms present_max=147.26ms
+[pi-radio][render-profile] frames=30 rendered=20 skipped=10 frame_avg=6.77ms frame_max=20.80ms background_avg=0.75ms background_max=0.91ms center_panel_avg=0.45ms center_panel_max=0.64ms genre_scale_avg=0.63ms genre_scale_max=4.74ms station_scale_avg=0.87ms station_scale_max=1.31ms foreground_avg=3.99ms foreground_max=13.61ms present_avg=132.75ms present_max=152.10ms
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
+[pi-radio][render-profile] frames=30 rendered=0 skipped=30
