@@ -3,6 +3,7 @@ from __future__ import annotations
 import layout
 from app import drag_genre_by_pixels, drag_station_by_pixels
 from state import UIState
+from touch_debug import log_touch
 from touch_input import TouchInputDevice, TouchSample
 
 
@@ -51,6 +52,10 @@ class TouchDragController:
         self._start_x = sample.x
         self._last_x = sample.x
         self._drag_started = False
+        gesture_state = "ignored" if self._zone == IGNORED_ZONE else "active"
+        log_touch(
+            f"touch down: screen=({sample.x},{sample.y}) zone={self._zone} gesture={gesture_state}"
+        )
 
     def _continue_touch(self, sample: TouchSample, state: UIState) -> None:
         if self._zone == IGNORED_ZONE:
@@ -76,12 +81,16 @@ class TouchDragController:
         self._last_x = sample.x
 
     def _apply_drag_delta(self, drag_delta: int, state: UIState) -> None:
+        log_touch(f"touch drag accepted: zone={self._zone} dx={drag_delta}")
         if self._zone == TOP_ZONE:
             drag_genre_by_pixels(state, drag_delta)
         elif self._zone == BOTTOM_ZONE:
             drag_station_by_pixels(state, drag_delta)
 
     def _reset_gesture(self) -> None:
+        log_touch(
+            f"touch up: zone={self._zone} drag_started={self._drag_started}"
+        )
         self._touch_active = False
         self._zone = None
         self._start_x = 0

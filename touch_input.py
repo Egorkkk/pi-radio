@@ -6,6 +6,7 @@ import struct
 from dataclasses import dataclass
 
 import layout
+from touch_debug import log_touch, log_touch_raw
 
 
 DEFAULT_TOUCH_DEVICE = "/dev/input/event5"
@@ -76,6 +77,9 @@ class TouchInputDevice:
             if not chunk:
                 break
 
+            log_touch(
+                f"touch input read: device={self.device_path} events={len(chunk) // EVENT_SIZE}"
+            )
             self._buffer.extend(chunk)
 
             while len(self._buffer) >= EVENT_SIZE:
@@ -91,18 +95,23 @@ class TouchInputDevice:
 
     def _process_event(self, ev_type: int, ev_code: int, ev_value: int) -> TouchSample | None:
         if ev_type == EV_KEY and ev_code == BTN_TOUCH:
+            log_touch_raw(f"BTN_TOUCH value={ev_value}")
             self._pending_touch = bool(ev_value)
             return None
 
         if ev_type == EV_ABS:
             if ev_code == ABS_X:
+                log_touch_raw(f"ABS_X value={ev_value}")
                 self._pending_x = ev_value
             elif ev_code == ABS_Y:
+                log_touch_raw(f"ABS_Y value={ev_value}")
                 self._pending_y = ev_value
             return None
 
         if ev_type != EV_SYN or ev_code != SYN_REPORT:
             return None
+
+        log_touch_raw("SYN_REPORT")
 
         changed = False
 
@@ -126,6 +135,9 @@ class TouchInputDevice:
             return None
 
         x, y = normalize_touch(self._abs_x, self._abs_y)
+        log_touch(
+            f"touch sample emitted: touching={self._touching} abs=({self._abs_x},{self._abs_y}) screen=({x},{y})"
+        )
         return TouchSample(touching=self._touching, x=x, y=y)
 
 

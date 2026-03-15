@@ -29,7 +29,8 @@ from sample_data import build_sample_genres
 from startup_splash import draw_startup_splash
 from station_selection_policy import StationSelectionPolicy
 from touch_controller import TouchDragController
-from touch_input import TouchInputDevice
+from touch_debug import log_touch, log_touch_session_start
+from touch_input import DEFAULT_TOUCH_DEVICE, TouchInputDevice
 
 
 WINDOW_TITLE = "Vintage Radio UI MVP"
@@ -144,15 +145,22 @@ def bootstrap_ui(display_backend, persisted_state, initial_genres):
 
 
 def bootstrap_touch_controller(config) -> TouchDragController | None:
+    log_touch(
+        f"touch bootstrap enabled={config.input.touch_support_enabled} device={DEFAULT_TOUCH_DEVICE}"
+    )
     if not config.input.touch_support_enabled:
+        log_touch("touch bootstrap skipped: touch support disabled in config")
         return None
 
     try:
         touch_input = TouchInputDevice()
     except OSError as exc:
+        log_touch(f"touch bootstrap failed: device open failed: {exc}")
         print(f"[pi-radio] Touch input disabled: failed to open device: {exc}")
         return None
 
+    log_touch(f"touch device open succeeded: device={touch_input.device_path}")
+    log_touch("touch controller startup succeeded")
     return TouchDragController(touch_input=touch_input)
 
 
@@ -173,6 +181,8 @@ def replace_state_genres(state, runtime_genres, persisted_state) -> None:
 
 def main() -> None:
     config = load_config()
+    log_touch_session_start()
+    log_touch(f"startup config: touch_support_enabled={config.input.touch_support_enabled}")
     persistence = RuntimePersistence(config.persistence.state_file)
     persisted_state = persistence.load()
     display_backend = bootstrap_display(config)
@@ -216,6 +226,7 @@ def main() -> None:
                 try:
                     touch_controller.poll_and_apply(state)
                 except OSError as exc:
+                    log_touch(f"touch runtime failure: disabling touch input: {exc}")
                     print(f"[pi-radio] Touch input disabled after runtime error: {exc}")
                     touch_controller.shutdown()
                     touch_controller = None

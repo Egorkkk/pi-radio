@@ -5,6 +5,7 @@ from dial import build_genre_scale, build_station_scale, jump_to_item, nudge_tar
 from models import Genre
 from sample_data import build_sample_genres
 from state import UIState
+from touch_debug import log_touch
 
 
 GENRE_INPUT_STEP = 22.0
@@ -102,12 +103,20 @@ def move_station_right(state: UIState) -> None:
 
 def drag_genre_by_pixels(state: UIState, delta_x: float) -> None:
     # Positive finger motion should make the scale move right under the fixed cursor.
+    before = state.genre_dial.target_position
     nudge_target(state.genre_dial, -delta_x, state.genre_scale)
+    after = state.genre_dial.target_position
+    log_touch(f"app drag genre: dx={delta_x} target_before={before:.1f} target_after={after:.1f}")
 
 
 def drag_station_by_pixels(state: UIState, delta_x: float) -> None:
     # Positive finger motion should make the scale move right under the fixed cursor.
+    before = state.station_dial.target_position
     nudge_target(state.station_dial, -delta_x, state.station_scale)
+    after = state.station_dial.target_position
+    log_touch(
+        f"app drag station: dx={delta_x} target_before={before:.1f} target_after={after:.1f}"
+    )
 
 
 def toggle_debug(state: UIState) -> None:
