@@ -208,7 +208,7 @@ class MpvBackend:
             self.config.executable,
             "--no-video",
             "--force-window=no",
-            "--msg-level=all=v",
+            "--msg-level=all=error",
             f"--audio-device={self.config.audio_device}",
             f"--cache-secs={self.config.cache_seconds}",
         ]
