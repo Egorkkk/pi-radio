@@ -100,5 +100,15 @@ def move_station_right(state: UIState) -> None:
     nudge_target(state.station_dial, STATION_INPUT_STEP, state.station_scale)
 
 
+def drag_genre_by_pixels(state: UIState, delta_x: float) -> None:
+    # Positive finger motion should make the scale move right under the fixed cursor.
+    nudge_target(state.genre_dial, -delta_x, state.genre_scale)
+
+
+def drag_station_by_pixels(state: UIState, delta_x: float) -> None:
+    # Positive finger motion should make the scale move right under the fixed cursor.
+    nudge_target(state.station_dial, -delta_x, state.station_scale)
+
+
 def toggle_debug(state: UIState) -> None:
     state.debug = not state.debug

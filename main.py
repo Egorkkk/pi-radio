@@ -28,6 +28,8 @@ from runtime_persistence import RuntimePersistence
 from sample_data import build_sample_genres
 from startup_splash import draw_startup_splash
 from station_selection_policy import StationSelectionPolicy
+from touch_controller import TouchDragController
+from touch_input import TouchInputDevice
 
 
 WINDOW_TITLE = "Vintage Radio UI MVP"
@@ -141,6 +143,19 @@ def bootstrap_ui(display_backend, persisted_state, initial_genres):
     return display_backend, renderer, state
 
 
+def bootstrap_touch_controller(config) -> TouchDragController | None:
+    if not config.input.touch_support_enabled:
+        return None
+
+    try:
+        touch_input = TouchInputDevice()
+    except OSError as exc:
+        print(f"[pi-radio] Touch input disabled: failed to open device: {exc}")
+        return None
+
+    return TouchDragController(touch_input=touch_input)
+
+
 def replace_state_genres(state, runtime_genres, persisted_state) -> None:
     state.genres = runtime_genres
 
@@ -173,26 +188,37 @@ def main() -> None:
     )
 
     clock = pygame.time.Clock()
-
-    backend = MpvBackend(config=config.mpv)
-    selection_policy = StationSelectionPolicy(
-        settle_epsilon=1.0,
-        settle_time=0.30,
-    )
-    controller = RadioController(
-        catalog=catalog,
-        backend=backend,
-        selection_policy=selection_policy,
-    )
+    touch_controller: TouchDragController | None = None
+    controller: RadioController | None = None
 
     last_saved_genre_id = state.selected_genre_id
     last_saved_station_id = state.selected_station_id
 
     try:
+        touch_controller = bootstrap_touch_controller(config)
+
+        backend = MpvBackend(config=config.mpv)
+        selection_policy = StationSelectionPolicy(
+            settle_epsilon=1.0,
+            settle_time=0.30,
+        )
+        controller = RadioController(
+            catalog=catalog,
+            backend=backend,
+            selection_policy=selection_policy,
+        )
+
         while state.running:
             dt = clock.tick(config.platform.fps) / 1000.0
 
             handle_events(state)
+            if touch_controller is not None:
+                try:
+                    touch_controller.poll_and_apply(state)
+                except OSError as exc:
+                    print(f"[pi-radio] Touch input disabled after runtime error: {exc}")
+                    touch_controller.shutdown()
+                    touch_controller = None
             update_state(state, dt)
             controller.update(state, dt)
             should_present = renderer.needs_render(state)
@@ -223,7 +249,10 @@ def main() -> None:
             state=state,
             enabled=config.persistence.save_on_station_change,
         )
-        controller.shutdown()
+        if touch_controller is not None:
+            touch_controller.shutdown()
+        if controller is not None:
+            controller.shutdown()
         display_backend.shutdown()
         pygame.quit()
 
