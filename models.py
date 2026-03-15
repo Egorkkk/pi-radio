@@ -37,6 +37,7 @@ class ScaleItem:
 @dataclass(slots=True, frozen=True)
 class ScaleLayout:
     items: tuple[ScaleItem, ...] = ()
+    period: float = 0.0
 
     def get_item_by_id(self, item_id: str) -> Optional[ScaleItem]:
         for item in self.items:

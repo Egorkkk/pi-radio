@@ -8,7 +8,7 @@ import pygame
 
 import layout
 import theme
-from dial import logical_to_screen_x
+from dial import logical_to_screen_x, nearest_wrapped_position
 from state import UIState
 
 
@@ -372,12 +372,11 @@ class UIRenderer:
     def _draw_genre_scale(self, surface: pygame.Surface, state: UIState) -> None:
         old_clip = self._with_clip(surface, self._genre_clip_rect)
 
-        for item in state.genre_scale.items:
-            screen_x = logical_to_screen_x(item.logical_center, state.genre_dial.display_position)
-
-            if screen_x < layout.SCALE_LEFT - 100 or screen_x > layout.SCALE_RIGHT + 100:
-                continue
-
+        for item, screen_x in self._iter_visible_scale_items(
+            scale=state.genre_scale,
+            display_position=state.genre_dial.display_position,
+            margin=100,
+        ):
             is_active = item.id == state.genre_dial.active_item_id
             tick_h = layout.GENRE_TICK_LONG_H if is_active else layout.GENRE_TICK_MEDIUM_H
             tick_color = theme.AMBER_BRIGHT if is_active else theme.AMBER
@@ -407,12 +406,11 @@ class UIRenderer:
 
         self._draw_station_texture_ticks(surface, state)
 
-        for item in state.station_scale.items:
-            screen_x = logical_to_screen_x(item.logical_center, state.station_dial.display_position)
-
-            if screen_x < layout.SCALE_LEFT - 180 or screen_x > layout.SCALE_RIGHT + 180:
-                continue
-
+        for item, screen_x in self._iter_visible_scale_items(
+            scale=state.station_scale,
+            display_position=state.station_dial.display_position,
+            margin=180,
+        ):
             is_active = item.id == state.station_dial.active_item_id
             marker_top = layout.STATION_BASELINE_Y - 22
             pygame.draw.line(
@@ -437,6 +435,30 @@ class UIRenderer:
             )
 
         self._restore_clip(surface, old_clip)
+
+    def _iter_visible_scale_items(self, scale, display_position: float, margin: int):
+        if not scale.items:
+            return
+
+        left_edge = layout.SCALE_LEFT - margin
+        right_edge = layout.SCALE_RIGHT + margin
+        period = scale.period if len(scale.items) > 1 else 0.0
+
+        for item in scale.items:
+            if period <= 0.0:
+                logical_centers = (item.logical_center,)
+            else:
+                nearest_center = nearest_wrapped_position(item.logical_center, display_position, period)
+                logical_centers = (
+                    nearest_center - period,
+                    nearest_center,
+                    nearest_center + period,
+                )
+
+            for logical_center in logical_centers:
+                screen_x = logical_to_screen_x(logical_center, display_position)
+                if left_edge <= screen_x <= right_edge:
+                    yield item, screen_x
 
     def _draw_station_texture_ticks(self, surface: pygame.Surface, state: UIState) -> None:
         offset = state.station_dial.display_position % 16
