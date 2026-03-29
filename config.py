@@ -57,12 +57,39 @@ class InputConfig:
 
 
 @dataclass(slots=True, frozen=True)
+class EncoderConfig:
+    pin_a: int | None = None
+    pin_b: int | None = None
+    reverse_direction: bool = False
+    steps_per_detent: int = 1
+    debounce_ms: int = 2
+
+
+@dataclass(slots=True, frozen=True)
+class EncoderTuningConfig:
+    acceleration_enabled: bool = True
+    fast_turn_window_ms: int = 120
+    fast_turn_threshold: int = 3
+    fast_turn_multiplier: int = 2
+    max_steps_per_event: int = 3
+
+
+@dataclass(slots=True, frozen=True)
+class EncodersConfig:
+    enabled: bool = False
+    genre: EncoderConfig = field(default_factory=EncoderConfig)
+    station: EncoderConfig = field(default_factory=EncoderConfig)
+    tuning: EncoderTuningConfig = field(default_factory=EncoderTuningConfig)
+
+
+@dataclass(slots=True, frozen=True)
 class AppConfig:
     difm: DIFMConfig = field(default_factory=DIFMConfig)
     mpv: MPVConfig = field(default_factory=MPVConfig)
     platform: PlatformConfig = field(default_factory=PlatformConfig)
     persistence: PersistenceConfig = field(default_factory=PersistenceConfig)
     input: InputConfig = field(default_factory=InputConfig)
+    encoders: EncodersConfig = field(default_factory=EncodersConfig)
 
 
 def load_config(path: str | Path = DEFAULT_SETTINGS_PATH) -> AppConfig:
@@ -80,6 +107,7 @@ def load_config(path: str | Path = DEFAULT_SETTINGS_PATH) -> AppConfig:
         platform=_load_platform_config(raw.get("platform", {})),
         persistence=_load_persistence_config(raw.get("persistence", {})),
         input=_load_input_config(raw.get("input", {})),
+        encoders=_load_encoders_config(raw.get("encoders", {})),
     )
 
 
@@ -142,3 +170,64 @@ def _load_input_config(data: dict[str, Any]) -> InputConfig:
             data.get("power_switch_support_enabled", False)
         ),
     )
+
+
+def _load_encoder_config(data: dict[str, Any]) -> EncoderConfig:
+    pin_a = _load_optional_int(data, "pin_a")
+    pin_b = _load_optional_int(data, "pin_b")
+    steps_per_detent = _load_int_with_minimum(data, "steps_per_detent", 1, 1)
+    debounce_ms = _load_int_with_minimum(data, "debounce_ms", 2, 0)
+
+    return EncoderConfig(
+        pin_a=pin_a,
+        pin_b=pin_b,
+        reverse_direction=bool(data.get("reverse_direction", False)),
+        steps_per_detent=steps_per_detent,
+        debounce_ms=debounce_ms,
+    )
+
+
+def _load_encoder_tuning_config(data: dict[str, Any]) -> EncoderTuningConfig:
+    return EncoderTuningConfig(
+        acceleration_enabled=bool(data.get("acceleration_enabled", True)),
+        fast_turn_window_ms=_load_int_with_minimum(
+            data, "fast_turn_window_ms", 120, 0
+        ),
+        fast_turn_threshold=_load_int_with_minimum(
+            data, "fast_turn_threshold", 3, 1
+        ),
+        fast_turn_multiplier=_load_int_with_minimum(
+            data, "fast_turn_multiplier", 2, 1
+        ),
+        max_steps_per_event=_load_int_with_minimum(
+            data, "max_steps_per_event", 3, 1
+        ),
+    )
+
+
+def _load_encoders_config(data: dict[str, Any]) -> EncodersConfig:
+    return EncodersConfig(
+        enabled=bool(data.get("enabled", False)),
+        genre=_load_encoder_config(data.get("genre", {})),
+        station=_load_encoder_config(data.get("station", {})),
+        tuning=_load_encoder_tuning_config(data.get("tuning", {})),
+    )
+
+
+def _load_optional_int(data: dict[str, Any], key: str) -> int | None:
+    raw_value = data.get(key)
+    if raw_value is None:
+        return None
+    return int(raw_value)
+
+
+def _load_int_with_minimum(
+    data: dict[str, Any],
+    key: str,
+    default: int,
+    minimum: int,
+) -> int:
+    value = int(data.get(key, default))
+    if value < minimum:
+        raise ValueError(f"{key} must be >= {minimum}")
+    return value

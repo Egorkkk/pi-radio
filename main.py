@@ -15,10 +15,12 @@ from app import (
     toggle_debug,
     update_state,
 )
-from config import load_config
+from config import AppConfig, EncoderConfig, load_config
 from difm_catalog import DIFMCatalog
 from difm_client import DIFMClient, DIFMClientError
 from difm_genre_map import load_difm_genre_map
+from encoder_controller import EncoderController
+from encoder_input import GPIOEncoderInputDevice
 from mpv_backend import MpvBackend
 from platform_runtime import create_display_backend
 from radio_catalog import RadioCatalog
@@ -164,6 +166,47 @@ def bootstrap_touch_controller(config) -> TouchDragController | None:
     return TouchDragController(touch_input=touch_input)
 
 
+def _validate_encoder_config(name: str, config: EncoderConfig) -> EncoderConfig | None:
+    if config.pin_a is None and config.pin_b is None:
+        print(f"[pi-radio] Encoder '{name}' disabled: pin mapping not configured.")
+        return None
+
+    if config.pin_a is None or config.pin_b is None:
+        print(f"[pi-radio] Encoder '{name}' disabled: both pin_a and pin_b are required.")
+        return None
+
+    if config.pin_a == config.pin_b:
+        print(f"[pi-radio] Encoder '{name}' disabled: pin_a and pin_b must differ.")
+        return None
+
+    return config
+
+
+def bootstrap_encoder_controller(config: AppConfig) -> EncoderController | None:
+    if not config.encoders.enabled:
+        return None
+
+    genre_config = _validate_encoder_config("genre", config.encoders.genre)
+    station_config = _validate_encoder_config("station", config.encoders.station)
+    if genre_config is None and station_config is None:
+        print("[pi-radio] Encoder input disabled: no valid encoder pin mappings.")
+        return None
+
+    try:
+        encoder_input = GPIOEncoderInputDevice(
+            genre_config=genre_config or EncoderConfig(),
+            station_config=station_config or EncoderConfig(),
+        )
+    except Exception as exc:
+        print(f"[pi-radio] Encoder input disabled: {exc}")
+        return None
+
+    return EncoderController(
+        encoder_input=encoder_input,
+        config=config.encoders,
+    )
+
+
 def replace_state_genres(state, runtime_genres, persisted_state) -> None:
     state.genres = runtime_genres
 
@@ -199,6 +242,7 @@ def main() -> None:
 
     clock = pygame.time.Clock()
     touch_controller: TouchDragController | None = None
+    encoder_controller: EncoderController | None = None
     controller: RadioController | None = None
 
     last_saved_genre_id = state.selected_genre_id
@@ -206,6 +250,7 @@ def main() -> None:
 
     try:
         touch_controller = bootstrap_touch_controller(config)
+        encoder_controller = bootstrap_encoder_controller(config)
 
         backend = MpvBackend(config=config.mpv)
         selection_policy = StationSelectionPolicy(
@@ -230,6 +275,13 @@ def main() -> None:
                     print(f"[pi-radio] Touch input disabled after runtime error: {exc}")
                     touch_controller.shutdown()
                     touch_controller = None
+            if encoder_controller is not None:
+                try:
+                    encoder_controller.poll_and_apply(state)
+                except Exception as exc:
+                    print(f"[pi-radio] Encoder input disabled after runtime error: {exc}")
+                    encoder_controller.shutdown()
+                    encoder_controller = None
             update_state(state, dt)
             controller.update(state, dt)
             should_present = renderer.needs_render(state)
@@ -262,6 +314,8 @@ def main() -> None:
         )
         if touch_controller is not None:
             touch_controller.shutdown()
+        if encoder_controller is not None:
+            encoder_controller.shutdown()
         if controller is not None:
             controller.shutdown()
         display_backend.shutdown()

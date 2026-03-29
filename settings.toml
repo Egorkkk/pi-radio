@@ -37,3 +37,27 @@ encoder_support_enabled = false
 touch_support_enabled = true
 volume_adc_enabled = false
 power_switch_support_enabled = false
+
+[encoders]
+enabled = false
+
+[encoders.genre]
+pin_a = 17
+pin_b = 27
+reverse_direction = false
+steps_per_detent = 1
+debounce_ms = 2
+
+[encoders.station]
+pin_a = 22
+pin_b = 23
+reverse_direction = false
+steps_per_detent = 1
+debounce_ms = 2
+
+[encoders.tuning]
+acceleration_enabled = true
+fast_turn_window_ms = 120
+fast_turn_threshold = 3
+fast_turn_multiplier = 2
+max_steps_per_event = 3
