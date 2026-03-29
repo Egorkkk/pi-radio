@@ -42,15 +42,15 @@ power_switch_support_enabled = false
 enabled = false
 
 [encoders.genre]
-pin_a = 17
-pin_b = 27
+pin_a = 20
+pin_b = 21
 reverse_direction = false
 steps_per_detent = 1
 debounce_ms = 2
 
 [encoders.station]
-pin_a = 22
-pin_b = 23
+pin_a = 16
+pin_b = 26
 reverse_direction = false
 steps_per_detent = 1
 debounce_ms = 2
