@@ -32,7 +32,7 @@ from startup_splash import draw_startup_splash
 from station_selection_policy import StationSelectionPolicy
 from touch_controller import TouchDragController
 from touch_debug import log_touch, log_touch_session_start
-from touch_input import DEFAULT_TOUCH_DEVICE, TouchInputDevice
+from touch_input import TouchInputDevice
 
 
 WINDOW_TITLE = "Vintage Radio UI MVP"
@@ -148,14 +148,14 @@ def bootstrap_ui(display_backend, persisted_state, initial_genres):
 
 def bootstrap_touch_controller(config) -> TouchDragController | None:
     log_touch(
-        f"touch bootstrap enabled={config.input.touch_support_enabled} device={DEFAULT_TOUCH_DEVICE}"
+        f"touch bootstrap enabled={config.input.touch_support_enabled} device={config.input.touch_device_path}"
     )
     if not config.input.touch_support_enabled:
         log_touch("touch bootstrap skipped: touch support disabled in config")
         return None
 
     try:
-        touch_input = TouchInputDevice()
+        touch_input = TouchInputDevice(device_path=config.input.touch_device_path)
     except OSError as exc:
         log_touch(f"touch bootstrap failed: device open failed: {exc}")
         print(f"[pi-radio] Touch input disabled: failed to open device: {exc}")

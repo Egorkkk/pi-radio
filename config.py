@@ -52,6 +52,7 @@ class InputConfig:
     keyboard_enabled: bool = True
     encoder_support_enabled: bool = False
     touch_support_enabled: bool = True
+    touch_device_path: str = "/dev/input/event5"
     station_hysteresis: float = 8.0
     volume_adc_enabled: bool = False
     power_switch_support_enabled: bool = False
@@ -165,6 +166,7 @@ def _load_input_config(data: dict[str, Any]) -> InputConfig:
         keyboard_enabled=bool(data.get("keyboard_enabled", True)),
         encoder_support_enabled=bool(data.get("encoder_support_enabled", False)),
         touch_support_enabled=bool(data.get("touch_support_enabled", False)),
+        touch_device_path=str(data.get("touch_device_path", "/dev/input/event5")),
         station_hysteresis=float(data.get("station_hysteresis", 8.0)),
         volume_adc_enabled=bool(data.get("volume_adc_enabled", False)),
         power_switch_support_enabled=bool(

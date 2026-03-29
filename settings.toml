@@ -35,6 +35,7 @@ save_on_station_change = true
 keyboard_enabled = true
 encoder_support_enabled = true
 touch_support_enabled = true
+touch_device_path = "/dev/input/event5"
 station_hysteresis = 8.0
 volume_adc_enabled = false
 power_switch_support_enabled = false

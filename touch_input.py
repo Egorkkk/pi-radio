@@ -8,9 +8,6 @@ from dataclasses import dataclass
 import layout
 from touch_debug import log_touch, log_touch_raw
 
-
-DEFAULT_TOUCH_DEVICE = "/dev/input/event5"
-
 TOUCH_X_MIN = 380
 TOUCH_X_MAX = 3730
 TOUCH_Y_MIN = 355
@@ -38,7 +35,7 @@ class TouchSample:
 
 
 class TouchInputDevice:
-    def __init__(self, device_path: str = DEFAULT_TOUCH_DEVICE) -> None:
+    def __init__(self, device_path: str) -> None:
         self.device_path = device_path
         self._fd = os.open(device_path, os.O_RDONLY | os.O_NONBLOCK)
         self._buffer = bytearray()

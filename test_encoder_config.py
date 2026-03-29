@@ -18,6 +18,7 @@ class EncoderConfigTests(unittest.TestCase):
         toml_text = """
 [input]
 encoder_support_enabled = true
+touch_device_path = "/dev/input/event9"
 station_hysteresis = 12.5
 
 [encoders.genre]
@@ -49,6 +50,7 @@ max_steps_per_event = 5
             config = load_config(config_path)
 
         self.assertTrue(config.input.encoder_support_enabled)
+        self.assertEqual(config.input.touch_device_path, "/dev/input/event9")
         self.assertEqual(config.input.station_hysteresis, 12.5)
         self.assertEqual(config.encoders.genre.pin_a, 17)
         self.assertEqual(config.encoders.genre.pin_b, 27)
@@ -129,6 +131,40 @@ class EncoderBootstrapFlagTests(unittest.TestCase):
             encoder_input=fake_encoder_input,
             config=config.encoders,
         )
+
+    def _import_main_module(self):
+        fake_pygame = types.SimpleNamespace()
+        with patch.dict(sys.modules, {"pygame": fake_pygame}):
+            sys.modules.pop("main", None)
+            return importlib.import_module("main")
+
+
+class TouchDevicePathConfigTests(unittest.TestCase):
+    def test_bootstrap_touch_controller_uses_configured_device_path(self) -> None:
+        main_module = self._import_main_module()
+        config = AppConfig(
+            input=InputConfig(
+                touch_support_enabled=True,
+                touch_device_path="/dev/input/event9",
+            ),
+        )
+        fake_touch_input = types.SimpleNamespace(device_path="/dev/input/event9")
+        fake_touch_controller = object()
+
+        with patch.object(
+            main_module,
+            "TouchInputDevice",
+            return_value=fake_touch_input,
+        ) as touch_input_class, patch.object(
+            main_module,
+            "TouchDragController",
+            return_value=fake_touch_controller,
+        ) as controller_class:
+            result = main_module.bootstrap_touch_controller(config)
+
+        self.assertIs(result, fake_touch_controller)
+        touch_input_class.assert_called_once_with(device_path="/dev/input/event9")
+        controller_class.assert_called_once_with(touch_input=fake_touch_input)
 
     def _import_main_module(self):
         fake_pygame = types.SimpleNamespace()
