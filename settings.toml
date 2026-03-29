@@ -25,7 +25,7 @@ fullscreen = true
 framebuffer_device = "/dev/fb0"
 width = 480
 height = 320
-fps = 60
+fps = 30
 
 [persistence]
 state_file = "runtime_state.json"
@@ -33,13 +33,11 @@ save_on_station_change = true
 
 [input]
 keyboard_enabled = true
-encoder_support_enabled = false
+encoder_support_enabled = true
 touch_support_enabled = true
+station_hysteresis = 8.0
 volume_adc_enabled = false
 power_switch_support_enabled = false
-
-[encoders]
-enabled = false
 
 [encoders.genre]
 pin_a = 20

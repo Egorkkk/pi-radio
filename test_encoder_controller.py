@@ -203,7 +203,6 @@ class EncoderControllerTests(unittest.TestCase):
         tuning: EncoderTuningConfig | None = None,
     ) -> EncodersConfig:
         return EncodersConfig(
-            enabled=True,
             genre=genre_config or EncoderConfig(pin_a=17, pin_b=27),
             station=station_config or EncoderConfig(pin_a=22, pin_b=23),
             tuning=tuning or EncoderTuningConfig(),

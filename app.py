@@ -15,7 +15,7 @@ GENRE_FOLLOW_SPEED = 10.0
 STATION_FOLLOW_SPEED = 12.0
 
 GENRE_HYSTERESIS = 6.0
-STATION_HYSTERESIS = 8.0
+DEFAULT_STATION_HYSTERESIS = 8.0
 
 
 def create_initial_state(genres: tuple[Genre, ...] | None = None) -> UIState:
@@ -60,7 +60,11 @@ def rebuild_station_scale_for_selected_genre(state: UIState) -> None:
     jump_to_item(state.station_dial, state.station_scale, first_station_id)
 
 
-def update_state(state: UIState, dt: float) -> None:
+def update_state(
+    state: UIState,
+    dt: float,
+    station_hysteresis: float = DEFAULT_STATION_HYSTERESIS,
+) -> None:
     update_dial(
         dial=state.genre_dial,
         scale=state.genre_scale,
@@ -79,7 +83,7 @@ def update_state(state: UIState, dt: float) -> None:
         scale=state.station_scale,
         dt=dt,
         follow_speed=STATION_FOLLOW_SPEED,
-        hysteresis=STATION_HYSTERESIS,
+        hysteresis=station_hysteresis,
     )
 
     state.selected_station_id = state.station_dial.active_item_id

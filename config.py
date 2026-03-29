@@ -52,6 +52,7 @@ class InputConfig:
     keyboard_enabled: bool = True
     encoder_support_enabled: bool = False
     touch_support_enabled: bool = True
+    station_hysteresis: float = 8.0
     volume_adc_enabled: bool = False
     power_switch_support_enabled: bool = False
 
@@ -76,7 +77,6 @@ class EncoderTuningConfig:
 
 @dataclass(slots=True, frozen=True)
 class EncodersConfig:
-    enabled: bool = False
     genre: EncoderConfig = field(default_factory=EncoderConfig)
     station: EncoderConfig = field(default_factory=EncoderConfig)
     tuning: EncoderTuningConfig = field(default_factory=EncoderTuningConfig)
@@ -165,6 +165,7 @@ def _load_input_config(data: dict[str, Any]) -> InputConfig:
         keyboard_enabled=bool(data.get("keyboard_enabled", True)),
         encoder_support_enabled=bool(data.get("encoder_support_enabled", False)),
         touch_support_enabled=bool(data.get("touch_support_enabled", False)),
+        station_hysteresis=float(data.get("station_hysteresis", 8.0)),
         volume_adc_enabled=bool(data.get("volume_adc_enabled", False)),
         power_switch_support_enabled=bool(
             data.get("power_switch_support_enabled", False)
@@ -207,7 +208,6 @@ def _load_encoder_tuning_config(data: dict[str, Any]) -> EncoderTuningConfig:
 
 def _load_encoders_config(data: dict[str, Any]) -> EncodersConfig:
     return EncodersConfig(
-        enabled=bool(data.get("enabled", False)),
         genre=_load_encoder_config(data.get("genre", {})),
         station=_load_encoder_config(data.get("station", {})),
         tuning=_load_encoder_tuning_config(data.get("tuning", {})),

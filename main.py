@@ -183,7 +183,7 @@ def _validate_encoder_config(name: str, config: EncoderConfig) -> EncoderConfig 
 
 
 def bootstrap_encoder_controller(config: AppConfig) -> EncoderController | None:
-    if not config.encoders.enabled:
+    if not config.input.encoder_support_enabled:
         return None
 
     genre_config = _validate_encoder_config("genre", config.encoders.genre)
@@ -282,7 +282,11 @@ def main() -> None:
                     print(f"[pi-radio] Encoder input disabled after runtime error: {exc}")
                     encoder_controller.shutdown()
                     encoder_controller = None
-            update_state(state, dt)
+            update_state(
+                state,
+                dt,
+                station_hysteresis=config.input.station_hysteresis,
+            )
             controller.update(state, dt)
             should_present = renderer.needs_render(state)
             if should_present:
