@@ -1,0 +1,17 @@
+[Unit]
+Description=Pi Radio Bluetooth reconnect and audio auto-switch
+After=network-online.target pi-radio.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=egorkkk
+WorkingDirectory=/home/egorkkk/pi-radio
+ExecStart=/home/egorkkk/pi-radio/scripts/bt-audio-watch.sh
+Restart=always
+RestartSec=3
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+[Install]
+WantedBy=multi-user.target

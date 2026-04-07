@@ -1,0 +1,21 @@
+[Unit]
+Description=Pi Radio
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=egorkkk
+WorkingDirectory=/home/egorkkk/pi-radio
+ExecStart=/usr/bin/python3 /home/egorkkk/pi-radio/main.py
+Restart=always
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+# Полезно для логов Python
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
