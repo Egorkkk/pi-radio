@@ -209,6 +209,7 @@ class MpvBackend:
             "--no-video",
             "--force-window=no",
             "--msg-level=all=error",
+            "--ao=pipewire",
             f"--audio-device={self.config.audio_device}",
             f"--cache-secs={self.config.cache_seconds}",
         ]
