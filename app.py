@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from datetime import datetime
+
 import layout
 from dial import build_genre_scale, build_station_scale, jump_to_item, nudge_target, update_dial
 from models import Genre
@@ -36,7 +38,14 @@ def create_initial_state(genres: tuple[Genre, ...] | None = None) -> UIState:
     )
 
     initialize_scales(state)
+    update_clock_text(state)
     return state
+
+
+def update_clock_text(state: UIState) -> None:
+    current_text = datetime.now().strftime("%H:%M")
+    if state.clock_text != current_text:
+        state.clock_text = current_text
 
 
 def initialize_scales(state: UIState) -> None:

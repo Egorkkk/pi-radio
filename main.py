@@ -13,6 +13,7 @@ from app import (
     move_station_left,
     move_station_right,
     toggle_debug,
+    update_clock_text,
     update_state,
 )
 from config import AppConfig, EncoderConfig, load_config
@@ -288,6 +289,7 @@ def main() -> None:
                 station_hysteresis=config.input.station_hysteresis,
             )
             controller.update(state, dt)
+            update_clock_text(state)
             should_present = renderer.needs_render(state)
             if should_present:
                 renderer.render(display_backend.surface, state)

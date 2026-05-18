@@ -43,7 +43,7 @@ class UIState:
     running: bool = True
     debug: bool = False
 
-    clock_text: str = "22:45"
+    clock_text: str = ""
 
     def get_selected_genre(self) -> Optional[Genre]:
         for genre in self.genres:
