@@ -6,7 +6,7 @@ import tempfile
 import types
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import app as app_module
 from config import AppConfig, EncoderConfig, EncodersConfig, InputConfig, load_config
@@ -93,11 +93,12 @@ class EncoderBootstrapFlagTests(unittest.TestCase):
             ),
         )
 
-        with patch.object(main_module, "GPIOEncoderInputDevice") as gpio_input_class:
+        fake_encoder_input_module = types.SimpleNamespace(GPIOEncoderInputDevice=Mock())
+        with patch.dict(sys.modules, {"encoder_input": fake_encoder_input_module}):
             result = main_module.bootstrap_encoder_controller(config)
 
         self.assertIsNone(result)
-        gpio_input_class.assert_not_called()
+        fake_encoder_input_module.GPIOEncoderInputDevice.assert_not_called()
 
     def test_bootstrap_uses_input_encoder_flag_as_single_source_of_truth(self) -> None:
         main_module = self._import_main_module()
@@ -111,15 +112,21 @@ class EncoderBootstrapFlagTests(unittest.TestCase):
         fake_encoder_input = object()
         fake_controller = object()
 
-        with patch.object(
-            main_module,
-            "GPIOEncoderInputDevice",
-            return_value=fake_encoder_input,
-        ) as gpio_input_class, patch.object(
-            main_module,
-            "EncoderController",
-            return_value=fake_controller,
-        ) as controller_class:
+        gpio_input_class = Mock(return_value=fake_encoder_input)
+        controller_class = Mock(return_value=fake_controller)
+        fake_encoder_input_module = types.SimpleNamespace(
+            GPIOEncoderInputDevice=gpio_input_class,
+        )
+        fake_encoder_controller_module = types.SimpleNamespace(
+            EncoderController=controller_class,
+        )
+        with patch.dict(
+            sys.modules,
+            {
+                "encoder_input": fake_encoder_input_module,
+                "encoder_controller": fake_encoder_controller_module,
+            },
+        ):
             result = main_module.bootstrap_encoder_controller(config)
 
         self.assertIs(result, fake_controller)

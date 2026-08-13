@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from time import perf_counter
+from typing import TYPE_CHECKING
 
 import pygame
 
@@ -20,10 +21,8 @@ from config import AppConfig, EncoderConfig, load_config
 from difm_catalog import DIFMCatalog
 from difm_client import DIFMClient, DIFMClientError
 from difm_genre_map import load_difm_genre_map
-from encoder_controller import EncoderController
-from encoder_input import GPIOEncoderInputDevice
 from mpv_backend import MpvBackend
-from platform_runtime import create_display_backend
+from platform_runtime import create_display_backend, prepare_display_environment
 from radio_catalog import RadioCatalog
 from radio_controller import RadioController
 from renderer import UIRenderer
@@ -34,6 +33,9 @@ from station_selection_policy import StationSelectionPolicy
 from touch_controller import TouchDragController
 from touch_debug import log_touch, log_touch_session_start
 from touch_input import TouchInputDevice
+
+if TYPE_CHECKING:
+    from encoder_controller import EncoderController
 
 
 WINDOW_TITLE = "Vintage Radio UI MVP"
@@ -129,6 +131,7 @@ def build_runtime_genres(config):
 
 
 def bootstrap_display(config):
+    prepare_display_environment(config.platform)
     pygame.init()
     pygame.mixer.quit()
     return create_display_backend(
@@ -194,6 +197,11 @@ def bootstrap_encoder_controller(config: AppConfig) -> EncoderController | None:
         return None
 
     try:
+        # RPi.GPIO may load native lgpio code. Keep that out of the process until
+        # the display has initialized successfully.
+        from encoder_controller import EncoderController
+        from encoder_input import GPIOEncoderInputDevice
+
         encoder_input = GPIOEncoderInputDevice(
             genre_config=genre_config or EncoderConfig(),
             station_config=station_config or EncoderConfig(),
@@ -243,7 +251,7 @@ def main() -> None:
 
     clock = pygame.time.Clock()
     touch_controller: TouchDragController | None = None
-    encoder_controller: EncoderController | None = None
+    encoder_controller = None
     controller: RadioController | None = None
 
     last_saved_genre_id = state.selected_genre_id
